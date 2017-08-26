@@ -142,7 +142,7 @@ ACDS_VERSION := 13.0
 ELF := cs303_a1.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := hello_world.c
+C_SRCS := tlc.c
 CXX_SRCS :=
 ASM_SRCS :=
 
