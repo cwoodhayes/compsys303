@@ -13,6 +13,7 @@
 #include <string.h>
 #include <ctype.h>
 
+
 // A template for COMPSYS 303 Assignment 1
 //
 // NOTE: You do not need to use this! Feel free
@@ -90,8 +91,11 @@ static volatile int pedestrianEW = 0;
 static int vehicle_detected = 0;
 
 // Traffic light timeouts
-static unsigned int timeout[TIMEOUT_NUM] = {500, 6000, 2000, 500, 6000, 2000};
-static TimeBuf timeout_buf = { -1, {500, 6000, 2000, 500, 6000, 2000} };
+//static unsigned int timeout[TIMEOUT_NUM] = {500, 6000, 2000, 500, 6000, 2000};
+//static TimeBuf timeout_buf = { -1, {500, 6000, 2000, 500, 6000, 2000} };
+
+static unsigned int timeout[TIMEOUT_NUM] = {1000,1000,1000,1000,1000,1000};
+static TimeBuf timeout_buf = { -1, {1000,1000,1000,1000,1000,1000} };
 
 // UART
 FILE* uart_fp;
@@ -106,7 +110,8 @@ FILE* lcd_fp;
 static unsigned char traffic_lights[TIMEOUT_NUM] = {0x24, 0x14, 0x0C, 0x24, 0x22, 0x21};
 
 // first letter is for the EW light. Second letter is for NS light.
-enum traffic_states {RR0, GR, YR, RR1, RG, RY};
+//P1 and P2 states indicate that the pedestrian walk signal is on.
+enum traffic_states {RR0, GR, GR_p, YR, RR1, RG, RG_p, RY};
 
 static unsigned int mode = 0;
 // Process states: use -1 as initialization state
@@ -116,8 +121,9 @@ static int proc_state[OPERATION_MODES + 1] = {-1, -1, -1, -1};
 // for any / all modes
 void init_tlc(void)
 {
-	printf("Initializing TLC...");
+	printf("Initializing TLC...\n");
 	//start the TLC timer
+	alt_alarm_stop(&tlc_timer);
 	alt_alarm_start(&tlc_timer, timeout[proc_state[mode]], tlc_timer_isr, &tlc_timer_event);
 	//get the initial mode from the switcehes
 	mode = 0;
@@ -133,7 +139,8 @@ void lcd_set_mode(unsigned int mode)
 {
 
 	lcd_fp = fopen(LCD_NAME, "w");
-	fprintf(lcd_fp, "\x1B[2JTLC Mode: %d", mode+1);
+	fprintf(lcd_fp, "\x1B[2J");
+	fprintf(lcd_fp, "TLC Mode: %d", mode+1);
 	fclose(lcd_fp);
 }
 
@@ -179,7 +186,23 @@ void simple_tlc(int* state)
 	if (tlc_timer_event) {
 		alt_alarm_stop(&tlc_timer);
 		tlc_timer_event = 0;
-		*state = (*state+1)%6;
+		switch(*state) {
+		case RR0:
+		case YR:
+		case RR1:
+		case RY:
+			*state = (*state+1)%8;
+			break;
+		case GR:
+			*state = YR;
+			break;
+		case RG:
+			*state = RY;
+			break;
+		default:
+			printf("Error. Invalid state in mode 1 (s=%d)\n", *state);
+			break;
+		}
 		alt_alarm_start(&tlc_timer, timeout[*state], tlc_timer_isr, &tlc_timer_event);
 	}
 	/*
@@ -208,8 +231,13 @@ alt_u32 tlc_timer_isr(void* context)
  */
 void init_buttons_pio(void)
 {
-	// Initialize NS/EW pedestrian button
-	// Reset the edge capture register
+	// clears the edge capture register
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE, 0);
+	// enable interrupts for all buttons
+	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BUTTONS_BASE, 0x3);
+	// register the ISR
+	alt_irq_register(BUTTONS_IRQ, (void*) 0x0 , NSEW_ped_isr);
+
 
 }
 
@@ -226,10 +254,41 @@ void pedestrian_tlc(int* state)
 		(*state)++;
 		return;
 	}
-
 	// Same as simple TLC
 	// with additional states / signals for Pedestrian crossings
 
+	// If the timeout has occured
+		if (tlc_timer_event) {
+			alt_alarm_stop(&tlc_timer);
+			tlc_timer_event = 0;
+			switch(*state) {
+			case RR0:
+				if (pedestrianNS) {
+					*state = GR_p;
+					pedestrianNS = 0;
+				}
+				else *state = GR;
+				break;
+			case RR1:
+				if (pedestrianEW) {
+					*state = RG_p;
+					pedestrianEW = 0;
+				}
+				else *state = RG;
+				break;
+			case RY: 		*state = RR0;			break;
+			case GR_p:
+			case GR:		*state = YR;			break;
+			case YR:		*state = RR1;			break;
+			case RG_p:
+			case RG: 		*state = RY; 			break;
+			default:
+				printf("Error. Invalid state in mode 2 (s=%d)\n", *state);
+				break;
+			}
+			alt_alarm_start(&tlc_timer, timeout[*state], tlc_timer_isr, &tlc_timer_event);
+			printf("new state: %d", proc_state[mode]);
+		}
 
 }
 
@@ -245,7 +304,13 @@ void NSEW_ped_isr(void* context, alt_u32 id)
 	// Cast context to volatile to avoid unwanted compiler optimization.
 	// Store the value in the Button's edge capture register in *context
 
-
+	//our way:
+	int buttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+	pedestrianNS = (buttons >> 0) & 0x01;
+	pedestrianEW = (buttons >> 1) & 0x01;
+	//set the edge cap register back to 0
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE, 0);
+	//printf("button pressed: %02x\n", buttons & 0x3);
 }
 
 
@@ -261,6 +326,8 @@ void configurable_tlc(int* state)
 {
 	if (*state == -1) {
 		// Process initialization state
+		init_tlc();
+		(*state)++;
 		return;
 	}
 
@@ -283,7 +350,8 @@ int config_tlc(int* tl_state)
 
 	if (*tl_state == -1) {
 		// Process initialization state
-		state = 0;
+		init_tlc();
+		(*tl_state)++;
 		return 0;
 	}
 
@@ -388,11 +456,17 @@ void update_traffic_lights(void) {
 	case RR1:
 		IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,0x24);
 		break;
+	case RG_p:
+		IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,0xA1);
+		break;
 	case RG:
 		IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,0x21);
 		break;
 	case RY:
 		IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,0x22);
+		break;
+	case GR_p:
+		IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,0x4C);
 		break;
 	case GR:
 		IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,0x0C);
@@ -400,8 +474,9 @@ void update_traffic_lights(void) {
 	case YR:
 		IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,0x14);
 		break;
-	//default:
-		//printf("TLC state invalid: %d  mode: %d\n", proc_state[mode], mode+1);
+	default:
+		printf("TLC state invalid: %d  mode: %d\n", proc_state[mode], mode+1);
+		break;
 	}
 }
 
@@ -409,18 +484,18 @@ void update_traffic_lights(void) {
 int main(void)
 {
 	int buttons = 0;			// status of mode button
-
-	lcd_set_mode(0);		// initialize lcd
 	init_buttons_pio();			// initialize buttons
 	while (1) {
 		// Button detection & debouncing
 
 		// if Mode switches change:
 		if (mode != (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x3)) {
+			proc_state[mode] = -1;
 			mode = IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x3;
 			printf("mode: %08x\n", mode);
 			lcd_set_mode(mode);
 		}
+
 		// if Car button pushed...
 			// handle_vehicle_button
 

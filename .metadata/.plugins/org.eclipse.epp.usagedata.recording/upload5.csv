@@ -1,0 +1,276 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503735025215
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503735026036
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.copy",1503735084638
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503735087815
+executed,command,org.eclipse.ui.workbench.texteditor,3.7.0.v20110928-1504,"org.eclipse.ui.edit.text.shiftLeft",1503735090785
+executed,command,org.eclipse.ui.workbench.texteditor,3.7.0.v20110928-1504,"org.eclipse.ui.edit.text.shiftLeft",1503735094357
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735095594
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735188506
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735238961
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.selectAll",1503735238964
+executed,command,org.eclipse.ui.workbench.texteditor,3.7.0.v20110928-1504,"org.eclipse.ui.edit.text.delete.line",1503735253072
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.copy",1503735253073
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1503735256110
+activated,view,org.eclipse.ui.views,3.6.0.v20110928-1505,"org.eclipse.ui.views.ContentOutline",1503735259709
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503735260878
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503735268554
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503735281893
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735289620
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735295000
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735315993
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1503735553816
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1503735602162
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735615244
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.copy",1503735651233
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503735653115
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.copy",1503735704986
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503735705847
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735740370
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.copy",1503735751682
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503735753904
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735771389
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735774573
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735783983
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735794601
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735798665
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735804577
+error,log,,,"Error starting process.",1503735809794
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735809814
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735813067
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735813474
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735813575
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503735816956
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503735817910
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503735822139
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503735825669
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735880537
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503735896719
+error,log,,,"Error starting process.",1503735901584
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735901594
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735903795
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503735911610
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503735912471
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --sidp=0x10110b0, --id=0x1276afde, --timestamp=1502656663, /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf] return code: 134",1503735916765
+error,log,,,"Downloading ELF Process failed",1503735916767
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735916790
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735919280
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503735921352
+error,log,,,"Error starting process.",1503735922252
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735922266
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735922511
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735924143
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735924275
+error,log,,,"Unable to validate connection settings.",1503735933037
+error,log,,,"Unable to validate connection settings.",1503735933040
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735933062
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735935304
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735936527
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735938103
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503735942151
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503735943091
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --sidp=0x10110b0, --id=0x1276afde, --timestamp=1502656663, /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf] return code: 4, 'other error'",1503735947529
+error,log,,,"Downloading ELF Process failed",1503735947530
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735947548
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735950671
+error,log,,,"Unable to validate connection settings.",1503735959249
+error,log,,,"Unable to validate connection settings.",1503735959252
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735959276
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503735961969
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503735967293
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503735968259
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503735972507
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503735989823
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736032256
+error,log,,,"Error starting process.",1503736036639
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736036649
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736038184
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736041443
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503736042412
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736046670
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736067335
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1503736072589
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503736076732
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736080025
+error,log,,,"Error starting process.",1503736083940
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736083960
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736085624
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736089207
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503736090193
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736094365
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736102232
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1503736106186
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503736129502
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736131683
+error,log,,,"Error starting process.",1503736136636
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736136652
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736138597
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736141690
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503736142678
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736146936
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736178123
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1503736182243
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503736185165
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736186462
+error,log,,,"Error starting process.",1503736191312
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736191332
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736191452
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736193870
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736193939
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736194338
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503736195277
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736199107
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736204492
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1503736208891
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736215537
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503736219473
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736220616
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736229981
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736234169
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736235845
+activated,view,org.eclipse.ui.views,3.6.0.v20110928-1505,"org.eclipse.ui.views.ContentOutline",1503736246949
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736250795
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736276369
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736291231
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503736292214
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736293753
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1503736305677
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503736322847
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.text.contentAssist.proposals",1503736322991
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736329521
+error,log,,,"Error starting process.",1503736333604
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736333625
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736335798
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736340066
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503736341049
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736345315
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736351911
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1503736354290
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503736358191
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736360735
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736374759
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503736375703
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736379935
+error,log,,,"Unable to validate connection settings.",1503736382140
+error,log,,,"Unable to validate connection settings.",1503736382142
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736382163
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736385281
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736392113
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1503736395154
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736402346
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736403931
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503736406189
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736409280
+error,log,,,"Error starting process.",1503736414350
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736414360
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736415084
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736415932
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736415939
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736419856
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503736420720
+error,log,,,"Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --sidp=0x10110b0, --id=0x1276afde, --timestamp=1502656663, /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf] return code: 134",1503736427153
+error,log,,,"Downloading ELF Process failed",1503736427156
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736427183
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736429022
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1503736435191
+started,bundle,org.eclipse.ui.views.properties.tabbed,3.5.200.v20110928-1505,"org.eclipse.ui.views.properties.tabbed",1503736435242
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503736437929
+error,log,,,"Unable to validate connection settings.",1503736438174
+error,log,,,"Unable to validate connection settings.",1503736438175
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736438187
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736440110
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736444586
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503736445511
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736449760
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736452065
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1503736458490
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1503736463668
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1503736464027
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1503736464744
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1503736465299
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1503736465829
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1503736469921
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503736472729
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736473925
+error,log,,,"Error starting process.",1503736478969
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736478978
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736480290
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736480311
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503736481206
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736485412
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736486809
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736505111
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736516481
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736528057
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1503736539233
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503736547810
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736549088
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736554520
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503736555475
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736559656
+error,log,,,"Unable to validate connection settings.",1503736561952
+error,log,,,"Unable to validate connection settings.",1503736561955
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736561987
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736563409
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736571921
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1503736588859
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736591118
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503736598334
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736599760
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736607310
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503736608248
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736612496
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736619110
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1503736623718
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736633154
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736638301
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503736639212
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736643111
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736678688
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736684684
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.findReplace",1503736684700
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736692157
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.copy",1503736757448
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736760846
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.copy",1503736764000
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503736775254
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1503736779250
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503736784086
+executed,command,org.eclipse.ui.workbench.texteditor,3.7.0.v20110928-1504,"org.eclipse.ui.edit.text.shiftLeft",1503736787659
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736788485
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.copy",1503736791994
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.copy",1503736797530
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.copy",1503736804186
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503736806558
+executed,command,org.eclipse.ui.workbench.texteditor,3.7.0.v20110928-1504,"org.eclipse.ui.edit.text.shiftLeft",1503736808926
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736809793
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736816697
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736837338
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503736879256
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736911353
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736960693
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503736963587
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736965450
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736967382
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503736982107
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736983675
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1503736992504
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1503736993280
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503737031950
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503737051157
+executed,command,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.edit.text.rename.element",1503737070348
+executed,command,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.edit.text.rename.element",1503737080970
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503737093703
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503737097350
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503737123916
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503737160456
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503737170383
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503737171873
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.copy",1503737177339
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503737179223
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1503737182078
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1503737183050
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503737188428
+activated,view,com.altera.sbtgui.launch,13.0.0.156,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1503737188453
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1503737189418
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1503737189419
