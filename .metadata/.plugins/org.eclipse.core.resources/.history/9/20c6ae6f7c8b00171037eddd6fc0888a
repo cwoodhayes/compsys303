@@ -91,7 +91,7 @@ static int camera_timeout = 1000;
 //static unsigned int timeout[TIMEOUT_NUM] = {500, 6000, 2000, 500, 6000, 2000};
 //static TimeBuf timeout_buf = { -1, {500, 6000, 2000, 500, 6000, 2000} };
 
-static unsigned int timeout[TIMEOUT_NUM] = {2000,2000,2000,2000,2000,2000};
+static unsigned int timeout[TIMEOUT_NUM] = {2000,2000,2000,2000,2000,2000,2000,2000};
 static TimeBuf timeout_buf = { -1, {2000,2000,2000,2000,2000,2000} };
 
 // UART
@@ -108,7 +108,7 @@ static unsigned char traffic_lights[TIMEOUT_NUM] = {0x24, 0x14, 0x0C, 0x24, 0x22
 
 // first letter is for the EW light. Second letter is for NS light.
 //P1 and P2 states indicate that the pedestrian walk signal is on.
-enum traffic_states {RR0, GR, YR, RR1, RG, RY, GR_p, RG_p};
+enum traffic_states {RR0, GR, GR_p, YR, RR1, RG, RG_p, RY};
 
 static unsigned int mode = 0;
 // Process states: use -1 as initialization state
@@ -187,7 +187,24 @@ void simple_tlc(int* state)
 	if (tlc_timer_event) {
 		alt_alarm_stop(&tlc_timer);
 		tlc_timer_event = 0;
-		*state = (*state+1)%6;
+		switch(*state) {
+		case RR0:
+		case YR:
+		case RR1:
+		case RY:
+			*state = (*state+1)%8;
+			break;
+		case GR:
+			*state = YR;
+			break;
+		case RG:
+			*state = RY;
+
+			break;
+		default:
+			printf("Error. Invalid state in mode 1 (s=%d)\n", *state);
+			break;
+		}
 		alt_alarm_start(&tlc_timer, timeout[*state], tlc_timer_isr, &tlc_timer_event);
 	}
 	/*
@@ -271,17 +288,8 @@ void pedestrian_tlc(int* state)
 			printf("Error. Invalid state in mode 2 (s=%d)\n", *state);
 			break;
 		}
-
-		int new_timeout = -1;
-		if (*state == GR_p) {
-			new_timeout = timeout[GR];
-		} else if (*state == RG_p) {
-			new_timeout = timeout[RG];
-		} else {
-			new_timeout = timeout[*state];
-		}
 		printf("Timeout value for state %d: %d\n", *state, timeout[*state]);
-		alt_alarm_start(&tlc_timer, new_timeout, tlc_timer_isr, &tlc_timer_event);
+		alt_alarm_start(&tlc_timer, timeout[*state], tlc_timer_isr, &tlc_timer_event);
 		//printf("new state: %d\n", proc_state[mode]);
 	}
 

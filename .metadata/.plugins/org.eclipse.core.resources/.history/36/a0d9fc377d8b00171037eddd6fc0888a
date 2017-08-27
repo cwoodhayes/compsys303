@@ -233,6 +233,7 @@ void init_buttons_pio(void)
  */
 void pedestrian_tlc(int* state)
 {
+	int new_timeout = -1;
 	if (*state == -1) {
 		// Process initialization state
 		init_tlc();
@@ -271,17 +272,8 @@ void pedestrian_tlc(int* state)
 			printf("Error. Invalid state in mode 2 (s=%d)\n", *state);
 			break;
 		}
-
-		int new_timeout = -1;
-		if (*state == GR_p) {
-			new_timeout = timeout[GR];
-		} else if (*state == RG_p) {
-			new_timeout = timeout[RG];
-		} else {
-			new_timeout = timeout[*state];
-		}
 		printf("Timeout value for state %d: %d\n", *state, timeout[*state]);
-		alt_alarm_start(&tlc_timer, new_timeout, tlc_timer_isr, &tlc_timer_event);
+		alt_alarm_start(&tlc_timer, timeout[*state], tlc_timer_isr, &tlc_timer_event);
 		//printf("new state: %d\n", proc_state[mode]);
 	}
 

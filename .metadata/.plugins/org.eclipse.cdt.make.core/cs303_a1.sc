@@ -7,6 +7,12 @@
 <includePath path="D:/compsys303/software/cs303_a1_bsp/HAL/inc"/>
 <includePath path="D:/compsys303/software/cs303_a1_bsp/"/>
 <includePath path="D:/compsys303/software/cs303_a1_bsp/drivers/inc"/>
+<includePath path="C:\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++" removed="true"/>
+<includePath path="C:\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++\i686-pc-cygwin" removed="true"/>
+<includePath path="C:\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++\backward" removed="true"/>
+<includePath path="C:\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include" removed="true"/>
+<includePath path="C:\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include-fixed" removed="true"/>
+<includePath path="C:\cygwin\usr\include"/>
 <includePath path="C:\altera\13.0\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++"/>
 <includePath path="C:\altera\13.0\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++\i686-pc-cygwin"/>
 <includePath path="C:\altera\13.0\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++\backward"/>
@@ -235,6 +241,9 @@
 <includePath path="D:/compsys303/software/cs303_a1_bsp/HAL/inc"/>
 <includePath path="D:/compsys303/software/cs303_a1_bsp/"/>
 <includePath path="D:/compsys303/software/cs303_a1_bsp/drivers/inc"/>
+<includePath path="C:\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include" removed="true"/>
+<includePath path="C:\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include-fixed" removed="true"/>
+<includePath path="C:\cygwin\usr\include"/>
 <includePath path="C:\altera\13.0\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include"/>
 <includePath path="C:\altera\13.0\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include-fixed"/>
 <includePath path="C:\altera\13.0\quartus\bin\cygwin\usr\include"/>

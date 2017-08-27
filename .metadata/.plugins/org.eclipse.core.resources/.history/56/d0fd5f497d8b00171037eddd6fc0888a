@@ -281,7 +281,7 @@ void pedestrian_tlc(int* state)
 			new_timeout = timeout[*state];
 		}
 		printf("Timeout value for state %d: %d\n", *state, timeout[*state]);
-		alt_alarm_start(&tlc_timer, new_timeout, tlc_timer_isr, &tlc_timer_event);
+		alt_alarm_start(&tlc_timer, timeout[*state], tlc_timer_isr, &tlc_timer_event);
 		//printf("new state: %d\n", proc_state[mode]);
 	}
 
