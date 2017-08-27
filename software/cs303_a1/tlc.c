@@ -125,8 +125,8 @@ void init_tlc(void)
 	//start the TLC timer
 	alt_alarm_stop(&tlc_timer);
 	alt_alarm_start(&tlc_timer, timeout[proc_state[mode]], tlc_timer_isr, &tlc_timer_event);
-	//get the initial mode from the switcehes
-	mode = 0;
+	//get the initial mode from the switches
+	mode = IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x3;
 	lcd_set_mode(mode);
 }
 
@@ -155,7 +155,7 @@ void buttons_driver(int* button)
 
 	*button = 0;	// no assumption is made on intial value of *button
 	// Debounce state machine
-		// call handle_mode_button()
+	// call handle_mode_button()
 }
 
 
@@ -198,6 +198,7 @@ void simple_tlc(int* state)
 			break;
 		case RG:
 			*state = RY;
+
 			break;
 		default:
 			printf("Error. Invalid state in mode 1 (s=%d)\n", *state);
@@ -258,37 +259,37 @@ void pedestrian_tlc(int* state)
 	// with additional states / signals for Pedestrian crossings
 
 	// If the timeout has occured
-		if (tlc_timer_event) {
-			alt_alarm_stop(&tlc_timer);
-			tlc_timer_event = 0;
-			switch(*state) {
-			case RR0:
-				if (pedestrianNS) {
-					*state = GR_p;
-					pedestrianNS = 0;
-				}
-				else *state = GR;
-				break;
-			case RR1:
-				if (pedestrianEW) {
-					*state = RG_p;
-					pedestrianEW = 0;
-				}
-				else *state = RG;
-				break;
-			case RY: 		*state = RR0;			break;
-			case GR_p:
-			case GR:		*state = YR;			break;
-			case YR:		*state = RR1;			break;
-			case RG_p:
-			case RG: 		*state = RY; 			break;
-			default:
-				printf("Error. Invalid state in mode 2 (s=%d)\n", *state);
-				break;
+	if (tlc_timer_event) {
+		alt_alarm_stop(&tlc_timer);
+		tlc_timer_event = 0;
+		switch(*state) {
+		case RR0:
+			if (pedestrianNS) {
+				*state = GR_p;
+				pedestrianNS = 0;
 			}
-			alt_alarm_start(&tlc_timer, timeout[*state], tlc_timer_isr, &tlc_timer_event);
-			printf("new state: %d", proc_state[mode]);
+			else *state = GR;
+			break;
+		case RR1:
+			if (pedestrianEW) {
+				*state = RG_p;
+				pedestrianEW = 0;
+			}
+			else *state = RG;
+			break;
+		case RY: 		*state = RR0;			break;
+		case GR_p:
+		case GR:		*state = YR;			break;
+		case YR:		*state = RR1;			break;
+		case RG_p:
+		case RG: 		*state = RY; 			break;
+		default:
+			printf("Error. Invalid state in mode 2 (s=%d)\n", *state);
+			break;
 		}
+		alt_alarm_start(&tlc_timer, timeout[*state], tlc_timer_isr, &tlc_timer_event);
+		printf("new state: %d\n", proc_state[mode]);
+	}
 
 }
 
@@ -368,7 +369,26 @@ int config_tlc(int* tl_state)
 */
 void timeout_data_handler(void)
 {
-
+	while(1) {
+		char c;
+		unsigned int num = 0;
+		timeout_buf.index = 0;
+		do {
+			c = fgetc(uart_fp);
+			if (c <= '9' && c >= '0') {
+				num += atoi(c);
+				num *= 10;
+				//TODO: check for invalid number? (i.e., bigger than 4 digits)
+			}
+			if (c == ',') {
+				buffer_timeout(num);
+				num = 0;
+			}
+			//ignore \r
+		} while (c != '\n');
+		if (update_timeout()) return;
+		else; //try again
+	}
 }
 
 
@@ -379,7 +399,8 @@ void timeout_data_handler(void)
  */
 void buffer_timeout(unsigned int value)
 {
-
+	timeout_buf.timeout[timeout_buf.index] = value;
+	timeout_buf.index = (timeout_buf.index+1)%sizeof(timeout_buf.timeout);
 }
 
 
@@ -391,7 +412,29 @@ void buffer_timeout(unsigned int value)
  */
 int update_timeout(void)
 {
-
+	if (timeout_buf.index != sizeof(timeout_buf.timeout)-1) {
+		//We didn't receive 6 numbers.  Packet rx failure
+		printf("Invalid packet received: ");
+		int i=0;
+		for (; i<timeout_buf.index; i++) {
+			printf("%d,", timeout_buf.timeout[i]);
+		}
+		printf("\n");
+		timeout_buf.index = 0;
+		return 0;
+	}
+	else {
+		//valid packet received. transfer the data into the timeout array.
+		printf("timeout values updated: ");
+		int i=0;
+		for (; i<timeout_buf.index; i++) {
+			timeout[i] = timeout_buf.timeout[i];
+			printf("%d,",timeout[i]);
+		}
+		printf("\n");
+		timeout_buf.index = 0;
+		return 1;
+	}
 }
 
 /* DESCRIPTION: Handles the red light camera timer interrupt
@@ -492,7 +535,7 @@ int main(void)
 		if (mode != (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x3)) {
 			proc_state[mode] = -1;
 			mode = IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x3;
-			printf("mode: %08x\n", mode);
+			//printf("mode: %08x\n", mode);
 			lcd_set_mode(mode);
 		}
 
