@@ -5,6 +5,7 @@
 
 #include <system.h>
 #include <sys/alt_alarm.h>
+#include <sys/alt_timestamp.h>
 #include <sys/alt_irq.h>
 #include <altera_avalon_pio_regs.h>
 #include <alt_types.h>
@@ -44,12 +45,6 @@ void handle_vehicle_button(void);
 void init_buttons_pio(void);
 void NSEW_ped_isr(void* context, alt_u32 id);
 
-// Red light Camera
-void clear_vehicle_detected(void);
-void vehicle_checked(void);
-int is_vehicle_detected(void);
-int is_vehicle_left(void);
-
 // Configuration Functions
 int update_timeout(void);
 void config_isr(void* context, alt_u32 id);
@@ -75,6 +70,7 @@ typedef struct  {
 // GLOBAL VARIABLES
 static alt_alarm tlc_timer;		// alarm used for traffic light timing
 static alt_alarm camera_timer;	// alarm used for camera timing
+static alt_u32 camera_start_time;
 
 // NOTE:
 // set contexts for ISRs to be volatile to avoid unwanted Compiler optimisation
@@ -89,13 +85,14 @@ static volatile int pedestrianEW = 0;
 // Car is Detected running a Red
 // Car Leaves
 static int vehicle_detected = 0;
+static int camera_timeout = 1000;
 
 // Traffic light timeouts
 //static unsigned int timeout[TIMEOUT_NUM] = {500, 6000, 2000, 500, 6000, 2000};
 //static TimeBuf timeout_buf = { -1, {500, 6000, 2000, 500, 6000, 2000} };
 
-static unsigned int timeout[TIMEOUT_NUM] = {1000,1000,1000,1000,1000,1000};
-static TimeBuf timeout_buf = { -1, {1000,1000,1000,1000,1000,1000} };
+static unsigned int timeout[TIMEOUT_NUM] = {2000,2000,2000,2000,2000,2000};
+static TimeBuf timeout_buf = { -1, {2000,2000,2000,2000,2000,2000} };
 
 // UART
 FILE* uart_fp;
@@ -292,7 +289,7 @@ void pedestrian_tlc(int* state)
 			break;
 		}
 		alt_alarm_start(&tlc_timer, timeout[*state], tlc_timer_isr, &tlc_timer_event);
-		printf("new state: %d\n", proc_state[mode]);
+		//printf("new state: %d\n", proc_state[mode]);
 	}
 
 }
@@ -310,7 +307,7 @@ void NSEW_ped_isr(void* context, alt_u32 id)
 	// Store the value in the Button's edge capture register in *context
 
 	//our way:
-	int buttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+	int buttons = IORD_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE);
 	pedestrianNS = (buttons >> 0) & 0x01;
 	pedestrianEW = (buttons >> 1) & 0x01;
 	//set the edge cap register back to 0
@@ -329,52 +326,9 @@ Else run pedestrian_tlc();
 */
 void configurable_tlc(int* state)
 {
-	if (*state == -1) {
-		// Process initialization state
-		init_tlc();
-		(*state)++;
-		return;
-	}
-	// Same as simple TLC
-	// with additional states / signals for Pedestrian crossings
-
-	// If the timeout has occurred
-	if (tlc_timer_event) {
-		alt_alarm_stop(&tlc_timer);
-		tlc_timer_event = 0;
-		switch(*state) {
-		case RR0:
-			if (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x4) {
-				timeout_data_handler();
-			}
-			if (pedestrianNS) {
-				*state = GR_p;
-				pedestrianNS = 0;
-			}
-			else *state = GR;
-			break;
-		case RR1:
-			if (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x4) {
-				timeout_data_handler();
-			}
-			if (pedestrianEW) {
-				*state = RG_p;
-				pedestrianEW = 0;
-			}
-			else *state = RG;
-			break;
-		case RY: 		*state = RR0;			break;
-		case GR_p:
-		case GR:		*state = YR;			break;
-		case YR:		*state = RR1;			break;
-		case RG_p:
-		case RG: 		*state = RY; 			break;
-		default:
-			printf("Error. Invalid state in mode 2 (s=%d)\n", *state);
-			break;
-		}
-		alt_alarm_start(&tlc_timer, timeout[*state], tlc_timer_isr, &tlc_timer_event);
-		printf("new state: %d\n", proc_state[mode]);
+	pedestrian_tlc(state);
+	if (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x4) {
+		timeout_data_handler();
 	}
 }
 
@@ -418,13 +372,6 @@ void timeout_data_handler(void)
  * PARAMETER:   value - value to store in the buffer
  * RETURNS:     none
  */
-void buffer_timeout(unsigned int value)
-{
-	timeout_buf.timeout[timeout_buf.index] = value;
-	timeout_buf.index = (timeout_buf.index+1)%sizeof(timeout_buf.timeout);
-}
-
-
 /* DESCRIPTION: Implements the update operation of timeout values as a critical
  *              section by ensuring that timeouts are fully received before
  *              allowing the update
@@ -480,11 +427,35 @@ alt_u32 camera_timer_isr(void* context)
  */
 void camera_tlc(int* state)
 {
-	if (*state == -1) {
-		configurable_tlc(state);
-		return;
+	configurable_tlc(state);
+	int buttons = IORD_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE) & 0x4;
+	if (buttons & 0x4) {
+		//the button was pressed
+		IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE, buttons & ~0x4);
+		if (vehicle_detected) {
+			//the vehicle is leaving the intersection
+			alt_alarm_stop(&camera_timer);
+			camera_timer_event = 0;
+			printf("Vehicle left after %dms.\n", alt_timestamp() - camera_start_time);
+		}
+		else {
+			//a vehicle is entering the intersection.  We only care
+			//if it's a yellow light.
+			if (*state == YR || *state == RY) {
+				vehicle_detected = 1;
+				camera_timer.time = 0;
+				alt_alarm_start(&camera_timer, camera_timeout, camera_timer_isr, &camera_timer_event);
+				camera_start_time = alt_timestamp();
+				printf("Camera activated.\n");
+			}
+		}
 	}
-
+	if (camera_timer_event) {
+		//snapshot taken
+		alt_alarm_stop(&camera_timer);
+		camera_timer_event = 0;
+		printf("Snapshot taken.\n");
+	}
 }
 
 
@@ -495,23 +466,6 @@ void camera_tlc(int* state)
 void handle_vehicle_button(void)
 {
 
-}
-
-// set vehicle_detected to 'no vehicle' state
-void clear_vehicle_detected(void)
-{
-}
-// set vehicle_detected to 'checking' state
-void vehicle_checked(void)
-{
-}
-// return true or false if a vehicle has been detected
-int is_vehicle_detected(void)
-{
-}
-// return true or false if the vehicle has left the intersection yet
-int is_vehicle_left(void)
-{
 }
 
 void update_traffic_lights(void) {
