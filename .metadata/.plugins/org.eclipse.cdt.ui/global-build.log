@@ -4756,3 +4756,767 @@ make --no-print-directory -C ../cs303_a1_bsp/
 [cs303_a1 build complete]
 
 **** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+Info: Compiling tlc.c to obj/default/tlc.o
+nios2-elf-gcc -xc -MP -MMD -c -I../cs303_a1_bsp//HAL/inc -I../cs303_a1_bsp/ -I../cs303_a1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/tlc.o tlc.c
+tlc.c: In function 'init_tlc':
+tlc.c:127: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'buttons_driver':
+tlc.c:154: warning: unused variable 'state'
+tlc.c: In function 'simple_tlc':
+tlc.c:207: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'init_buttons_pio':
+tlc.c:240: warning: implicit declaration of function 'alt_irq_register'
+tlc.c: In function 'pedestrian_tlc':
+tlc.c:290: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'timeout_data_handler':
+tlc.c:379: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c: In function 'is_vehicle_detected':
+tlc.c:490: warning: control reaches end of non-void function
+tlc.c: In function 'is_vehicle_left':
+tlc.c:494: warning: control reaches end of non-void function
+tlc.c: In function 'main':
+tlc.c:529: warning: unused variable 'buttons'
+tlc.c: At top level:
+tlc.c:77: warning: 'camera_timer' defined but not used
+tlc.c:91: warning: 'vehicle_detected' defined but not used
+tlc.c:110: warning: 'traffic_lights' defined but not used
+Info: Linking cs303_a1.elf
+nios2-elf-g++  -T'../cs303_a1_bsp//linker.x' -msys-crt0='../cs303_a1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../cs303_a1_bsp/   -Wl,-Map=cs303_a1.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o cs303_a1.elf obj/default/tlc.o -lm 
+nios2-elf-insert cs303_a1.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "D:/compsys303" --sopcinfo D:/compsys303/system.sopcinfo
+Info: (cs303_a1.elf) 73 KBytes program size (code + initialized data).
+Info:                8111 KBytes free for stack + heap.
+Info: Creating cs303_a1.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source cs303_a1.elf >cs303_a1.objdump
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+Info: Compiling tlc.c to obj/default/tlc.o
+nios2-elf-gcc -xc -MP -MMD -c -I../cs303_a1_bsp//HAL/inc -I../cs303_a1_bsp/ -I../cs303_a1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/tlc.o tlc.c
+tlc.c: In function 'init_tlc':
+tlc.c:127: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'buttons_driver':
+tlc.c:156: warning: unused variable 'state'
+tlc.c: In function 'simple_tlc':
+tlc.c:209: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'init_buttons_pio':
+tlc.c:242: warning: implicit declaration of function 'alt_irq_register'
+tlc.c: In function 'pedestrian_tlc':
+tlc.c:292: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'timeout_data_handler':
+tlc.c:381: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c: In function 'is_vehicle_detected':
+tlc.c:492: warning: control reaches end of non-void function
+tlc.c: In function 'is_vehicle_left':
+tlc.c:496: warning: control reaches end of non-void function
+tlc.c: In function 'main':
+tlc.c:531: warning: unused variable 'buttons'
+tlc.c: At top level:
+tlc.c:77: warning: 'camera_timer' defined but not used
+tlc.c:91: warning: 'vehicle_detected' defined but not used
+tlc.c:110: warning: 'traffic_lights' defined but not used
+Info: Linking cs303_a1.elf
+nios2-elf-g++  -T'../cs303_a1_bsp//linker.x' -msys-crt0='../cs303_a1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../cs303_a1_bsp/   -Wl,-Map=cs303_a1.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o cs303_a1.elf obj/default/tlc.o -lm 
+nios2-elf-insert cs303_a1.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "D:/compsys303" --sopcinfo D:/compsys303/system.sopcinfo
+Info: (cs303_a1.elf) 73 KBytes program size (code + initialized data).
+Info:                8111 KBytes free for stack + heap.
+Info: Creating cs303_a1.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source cs303_a1.elf >cs303_a1.objdump
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+Info: Compiling tlc.c to obj/default/tlc.o
+nios2-elf-gcc -xc -MP -MMD -c -I../cs303_a1_bsp//HAL/inc -I../cs303_a1_bsp/ -I../cs303_a1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/tlc.o tlc.c
+tlc.c: In function 'init_tlc':
+tlc.c:127: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'buttons_driver':
+tlc.c:154: warning: unused variable 'state'
+tlc.c: In function 'simple_tlc':
+tlc.c:207: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'init_buttons_pio':
+tlc.c:240: warning: implicit declaration of function 'alt_irq_register'
+tlc.c: In function 'pedestrian_tlc':
+tlc.c:290: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'timeout_data_handler':
+tlc.c:379: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c: In function 'is_vehicle_detected':
+tlc.c:490: warning: control reaches end of non-void function
+tlc.c: In function 'is_vehicle_left':
+tlc.c:494: warning: control reaches end of non-void function
+tlc.c: In function 'main':
+tlc.c:529: warning: unused variable 'buttons'
+tlc.c: At top level:
+tlc.c:77: warning: 'camera_timer' defined but not used
+tlc.c:91: warning: 'vehicle_detected' defined but not used
+tlc.c:110: warning: 'traffic_lights' defined but not used
+Info: Linking cs303_a1.elf
+nios2-elf-g++  -T'../cs303_a1_bsp//linker.x' -msys-crt0='../cs303_a1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../cs303_a1_bsp/   -Wl,-Map=cs303_a1.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o cs303_a1.elf obj/default/tlc.o -lm 
+nios2-elf-insert cs303_a1.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "D:/compsys303" --sopcinfo D:/compsys303/system.sopcinfo
+Info: (cs303_a1.elf) 73 KBytes program size (code + initialized data).
+Info:                8111 KBytes free for stack + heap.
+Info: Creating cs303_a1.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source cs303_a1.elf >cs303_a1.objdump
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+Info: Compiling tlc.c to obj/default/tlc.o
+nios2-elf-gcc -xc -MP -MMD -c -I../cs303_a1_bsp//HAL/inc -I../cs303_a1_bsp/ -I../cs303_a1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/tlc.o tlc.c
+tlc.c: In function 'init_tlc':
+tlc.c:130: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'buttons_driver':
+tlc.c:155: warning: unused variable 'state'
+tlc.c: In function 'simple_tlc':
+tlc.c:208: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'init_buttons_pio':
+tlc.c:241: warning: implicit declaration of function 'alt_irq_register'
+tlc.c: In function 'pedestrian_tlc':
+tlc.c:291: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'timeout_data_handler':
+tlc.c:380: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c: In function 'is_vehicle_detected':
+tlc.c:491: warning: control reaches end of non-void function
+tlc.c: In function 'is_vehicle_left':
+tlc.c:495: warning: control reaches end of non-void function
+tlc.c: In function 'main':
+tlc.c:530: warning: unused variable 'buttons'
+tlc.c: At top level:
+tlc.c:77: warning: 'camera_timer' defined but not used
+tlc.c:91: warning: 'vehicle_detected' defined but not used
+tlc.c:110: warning: 'traffic_lights' defined but not used
+Info: Linking cs303_a1.elf
+nios2-elf-g++  -T'../cs303_a1_bsp//linker.x' -msys-crt0='../cs303_a1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../cs303_a1_bsp/   -Wl,-Map=cs303_a1.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o cs303_a1.elf obj/default/tlc.o -lm 
+nios2-elf-insert cs303_a1.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "D:/compsys303" --sopcinfo D:/compsys303/system.sopcinfo
+Info: (cs303_a1.elf) 73 KBytes program size (code + initialized data).
+Info:                8111 KBytes free for stack + heap.
+Info: Creating cs303_a1.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source cs303_a1.elf >cs303_a1.objdump
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+Info: Compiling tlc.c to obj/default/tlc.o
+nios2-elf-gcc -xc -MP -MMD -c -I../cs303_a1_bsp//HAL/inc -I../cs303_a1_bsp/ -I../cs303_a1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/tlc.o tlc.c
+tlc.c: In function 'init_tlc':
+tlc.c:127: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'buttons_driver':
+tlc.c:154: warning: unused variable 'state'
+tlc.c: In function 'simple_tlc':
+tlc.c:207: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'init_buttons_pio':
+tlc.c:240: warning: implicit declaration of function 'alt_irq_register'
+tlc.c: In function 'pedestrian_tlc':
+tlc.c:290: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'timeout_data_handler':
+tlc.c:379: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c: In function 'is_vehicle_detected':
+tlc.c:490: warning: control reaches end of non-void function
+tlc.c: In function 'is_vehicle_left':
+tlc.c:494: warning: control reaches end of non-void function
+tlc.c: In function 'main':
+tlc.c:529: warning: unused variable 'buttons'
+tlc.c: At top level:
+tlc.c:77: warning: 'camera_timer' defined but not used
+tlc.c:91: warning: 'vehicle_detected' defined but not used
+tlc.c:110: warning: 'traffic_lights' defined but not used
+Info: Linking cs303_a1.elf
+nios2-elf-g++  -T'../cs303_a1_bsp//linker.x' -msys-crt0='../cs303_a1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../cs303_a1_bsp/   -Wl,-Map=cs303_a1.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o cs303_a1.elf obj/default/tlc.o -lm 
+nios2-elf-insert cs303_a1.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "D:/compsys303" --sopcinfo D:/compsys303/system.sopcinfo
+Info: (cs303_a1.elf) 73 KBytes program size (code + initialized data).
+Info:                8111 KBytes free for stack + heap.
+Info: Creating cs303_a1.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source cs303_a1.elf >cs303_a1.objdump
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+Info: Compiling tlc.c to obj/default/tlc.o
+nios2-elf-gcc -xc -MP -MMD -c -I../cs303_a1_bsp//HAL/inc -I../cs303_a1_bsp/ -I../cs303_a1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/tlc.o tlc.c
+tlc.c: In function 'init_tlc':
+tlc.c:130: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'buttons_driver':
+tlc.c:158: warning: unused variable 'state'
+tlc.c: In function 'simple_tlc':
+tlc.c:211: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'init_buttons_pio':
+tlc.c:244: warning: implicit declaration of function 'alt_irq_register'
+tlc.c: In function 'pedestrian_tlc':
+tlc.c:294: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'timeout_data_handler':
+tlc.c:383: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c: In function 'is_vehicle_detected':
+tlc.c:494: warning: control reaches end of non-void function
+tlc.c: In function 'is_vehicle_left':
+tlc.c:498: warning: control reaches end of non-void function
+tlc.c: In function 'main':
+tlc.c:533: warning: unused variable 'buttons'
+tlc.c: At top level:
+tlc.c:77: warning: 'camera_timer' defined but not used
+tlc.c:91: warning: 'vehicle_detected' defined but not used
+tlc.c:110: warning: 'traffic_lights' defined but not used
+Info: Linking cs303_a1.elf
+nios2-elf-g++  -T'../cs303_a1_bsp//linker.x' -msys-crt0='../cs303_a1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../cs303_a1_bsp/   -Wl,-Map=cs303_a1.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o cs303_a1.elf obj/default/tlc.o -lm 
+nios2-elf-insert cs303_a1.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "D:/compsys303" --sopcinfo D:/compsys303/system.sopcinfo
+Info: (cs303_a1.elf) 73 KBytes program size (code + initialized data).
+Info:                8111 KBytes free for stack + heap.
+Info: Creating cs303_a1.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source cs303_a1.elf >cs303_a1.objdump
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+Info: Compiling tlc.c to obj/default/tlc.o
+nios2-elf-gcc -xc -MP -MMD -c -I../cs303_a1_bsp//HAL/inc -I../cs303_a1_bsp/ -I../cs303_a1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/tlc.o tlc.c
+tlc.c: In function 'init_tlc':
+tlc.c:130: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'buttons_driver':
+tlc.c:158: warning: unused variable 'state'
+tlc.c: In function 'simple_tlc':
+tlc.c:211: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'init_buttons_pio':
+tlc.c:244: warning: implicit declaration of function 'alt_irq_register'
+tlc.c: In function 'pedestrian_tlc':
+tlc.c:294: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'timeout_data_handler':
+tlc.c:383: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c: In function 'is_vehicle_detected':
+tlc.c:494: warning: control reaches end of non-void function
+tlc.c: In function 'is_vehicle_left':
+tlc.c:498: warning: control reaches end of non-void function
+tlc.c: At top level:
+tlc.c:77: warning: 'camera_timer' defined but not used
+tlc.c:91: warning: 'vehicle_detected' defined but not used
+tlc.c:110: warning: 'traffic_lights' defined but not used
+Info: Linking cs303_a1.elf
+nios2-elf-g++  -T'../cs303_a1_bsp//linker.x' -msys-crt0='../cs303_a1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../cs303_a1_bsp/   -Wl,-Map=cs303_a1.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o cs303_a1.elf obj/default/tlc.o -lm 
+nios2-elf-insert cs303_a1.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "D:/compsys303" --sopcinfo D:/compsys303/system.sopcinfo
+Info: (cs303_a1.elf) 72 KBytes program size (code + initialized data).
+Info:                8111 KBytes free for stack + heap.
+Info: Creating cs303_a1.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source cs303_a1.elf >cs303_a1.objdump
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+Info: Compiling tlc.c to obj/default/tlc.o
+nios2-elf-gcc -xc -MP -MMD -c -I../cs303_a1_bsp//HAL/inc -I../cs303_a1_bsp/ -I../cs303_a1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/tlc.o tlc.c
+tlc.c: In function 'init_tlc':
+tlc.c:130: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'buttons_driver':
+tlc.c:158: warning: unused variable 'state'
+tlc.c: In function 'simple_tlc':
+tlc.c:211: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'init_buttons_pio':
+tlc.c:244: warning: implicit declaration of function 'alt_irq_register'
+tlc.c: In function 'pedestrian_tlc':
+tlc.c:294: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'timeout_data_handler':
+tlc.c:383: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c: In function 'is_vehicle_detected':
+tlc.c:494: warning: control reaches end of non-void function
+tlc.c: In function 'is_vehicle_left':
+tlc.c:498: warning: control reaches end of non-void function
+tlc.c: In function 'main':
+tlc.c:535: warning: passing argument 1 of 'fputc' makes integer from pointer without a cast
+tlc.c:535: error: too few arguments to function 'fputc'
+make: *** [obj/default/tlc.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+Info: Compiling tlc.c to obj/default/tlc.o
+nios2-elf-gcc -xc -MP -MMD -c -I../cs303_a1_bsp//HAL/inc -I../cs303_a1_bsp/ -I../cs303_a1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/tlc.o tlc.c
+tlc.c: In function 'init_tlc':
+tlc.c:130: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'buttons_driver':
+tlc.c:158: warning: unused variable 'state'
+tlc.c: In function 'simple_tlc':
+tlc.c:211: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'init_buttons_pio':
+tlc.c:244: warning: implicit declaration of function 'alt_irq_register'
+tlc.c: In function 'pedestrian_tlc':
+tlc.c:294: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'timeout_data_handler':
+tlc.c:383: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c: In function 'is_vehicle_detected':
+tlc.c:494: warning: control reaches end of non-void function
+tlc.c: In function 'is_vehicle_left':
+tlc.c:498: warning: control reaches end of non-void function
+tlc.c: At top level:
+tlc.c:77: warning: 'camera_timer' defined but not used
+tlc.c:91: warning: 'vehicle_detected' defined but not used
+tlc.c:110: warning: 'traffic_lights' defined but not used
+Info: Linking cs303_a1.elf
+nios2-elf-g++  -T'../cs303_a1_bsp//linker.x' -msys-crt0='../cs303_a1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../cs303_a1_bsp/   -Wl,-Map=cs303_a1.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o cs303_a1.elf obj/default/tlc.o -lm 
+nios2-elf-insert cs303_a1.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "D:/compsys303" --sopcinfo D:/compsys303/system.sopcinfo
+Info: (cs303_a1.elf) 72 KBytes program size (code + initialized data).
+Info:                8111 KBytes free for stack + heap.
+Info: Creating cs303_a1.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source cs303_a1.elf >cs303_a1.objdump
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+Info: Compiling tlc.c to obj/default/tlc.o
+nios2-elf-gcc -xc -MP -MMD -c -I../cs303_a1_bsp//HAL/inc -I../cs303_a1_bsp/ -I../cs303_a1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/tlc.o tlc.c
+tlc.c: In function 'init_tlc':
+tlc.c:130: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'buttons_driver':
+tlc.c:158: warning: unused variable 'state'
+tlc.c: In function 'simple_tlc':
+tlc.c:211: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'init_buttons_pio':
+tlc.c:244: warning: implicit declaration of function 'alt_irq_register'
+tlc.c: In function 'pedestrian_tlc':
+tlc.c:294: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'timeout_data_handler':
+tlc.c:383: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c: In function 'is_vehicle_detected':
+tlc.c:494: warning: control reaches end of non-void function
+tlc.c: In function 'is_vehicle_left':
+tlc.c:498: warning: control reaches end of non-void function
+tlc.c: In function 'main':
+tlc.c:537: warning: passing argument 1 of 'fputc' makes integer from pointer without a cast
+tlc.c:537: warning: passing argument 2 of 'fputc' makes pointer from integer without a cast
+tlc.c: At top level:
+tlc.c:77: warning: 'camera_timer' defined but not used
+tlc.c:91: warning: 'vehicle_detected' defined but not used
+tlc.c:110: warning: 'traffic_lights' defined but not used
+Info: Linking cs303_a1.elf
+nios2-elf-g++  -T'../cs303_a1_bsp//linker.x' -msys-crt0='../cs303_a1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../cs303_a1_bsp/   -Wl,-Map=cs303_a1.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o cs303_a1.elf obj/default/tlc.o -lm 
+nios2-elf-insert cs303_a1.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "D:/compsys303" --sopcinfo D:/compsys303/system.sopcinfo
+Info: (cs303_a1.elf) 73 KBytes program size (code + initialized data).
+Info:                8111 KBytes free for stack + heap.
+Info: Creating cs303_a1.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source cs303_a1.elf >cs303_a1.objdump
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+Info: Compiling tlc.c to obj/default/tlc.o
+nios2-elf-gcc -xc -MP -MMD -c -I../cs303_a1_bsp//HAL/inc -I../cs303_a1_bsp/ -I../cs303_a1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/tlc.o tlc.c
+tlc.c: In function 'init_tlc':
+tlc.c:130: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'buttons_driver':
+tlc.c:158: warning: unused variable 'state'
+tlc.c: In function 'simple_tlc':
+tlc.c:211: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'init_buttons_pio':
+tlc.c:244: warning: implicit declaration of function 'alt_irq_register'
+tlc.c: In function 'pedestrian_tlc':
+tlc.c:294: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'configurable_tlc':
+tlc.c:352: error: duplicate case value
+tlc.c:346: error: previously used here
+tlc.c:359: error: duplicate case value
+tlc.c:347: error: previously used here
+tlc.c:376: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'timeout_data_handler':
+tlc.c:400: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c: In function 'is_vehicle_detected':
+tlc.c:511: warning: control reaches end of non-void function
+tlc.c: In function 'is_vehicle_left':
+tlc.c:515: warning: control reaches end of non-void function
+make: *** [obj/default/tlc.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+Info: Compiling tlc.c to obj/default/tlc.o
+nios2-elf-gcc -xc -MP -MMD -c -I../cs303_a1_bsp//HAL/inc -I../cs303_a1_bsp/ -I../cs303_a1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/tlc.o tlc.c
+tlc.c: In function 'init_tlc':
+tlc.c:130: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'buttons_driver':
+tlc.c:158: warning: unused variable 'state'
+tlc.c: In function 'simple_tlc':
+tlc.c:211: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'init_buttons_pio':
+tlc.c:244: warning: implicit declaration of function 'alt_irq_register'
+tlc.c: In function 'pedestrian_tlc':
+tlc.c:294: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'configurable_tlc':
+tlc.c:376: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'timeout_data_handler':
+tlc.c:400: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c: In function 'is_vehicle_detected':
+tlc.c:511: warning: control reaches end of non-void function
+tlc.c: In function 'is_vehicle_left':
+tlc.c:515: warning: control reaches end of non-void function
+tlc.c: At top level:
+tlc.c:77: warning: 'camera_timer' defined but not used
+tlc.c:91: warning: 'vehicle_detected' defined but not used
+tlc.c:110: warning: 'traffic_lights' defined but not used
+Info: Linking cs303_a1.elf
+nios2-elf-g++  -T'../cs303_a1_bsp//linker.x' -msys-crt0='../cs303_a1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../cs303_a1_bsp/   -Wl,-Map=cs303_a1.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o cs303_a1.elf obj/default/tlc.o -lm 
+nios2-elf-insert cs303_a1.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "D:/compsys303" --sopcinfo D:/compsys303/system.sopcinfo
+Info: (cs303_a1.elf) 72 KBytes program size (code + initialized data).
+Info:                8112 KBytes free for stack + heap.
+Info: Creating cs303_a1.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source cs303_a1.elf >cs303_a1.objdump
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+Info: Compiling tlc.c to obj/default/tlc.o
+nios2-elf-gcc -xc -MP -MMD -c -I../cs303_a1_bsp//HAL/inc -I../cs303_a1_bsp/ -I../cs303_a1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/tlc.o tlc.c
+tlc.c: In function 'init_tlc':
+tlc.c:130: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'buttons_driver':
+tlc.c:158: warning: unused variable 'state'
+tlc.c: In function 'simple_tlc':
+tlc.c:211: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'init_buttons_pio':
+tlc.c:244: warning: implicit declaration of function 'alt_irq_register'
+tlc.c: In function 'pedestrian_tlc':
+tlc.c:294: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'configurable_tlc':
+tlc.c:376: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'timeout_data_handler':
+tlc.c:399: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c: In function 'is_vehicle_detected':
+tlc.c:510: warning: control reaches end of non-void function
+tlc.c: In function 'is_vehicle_left':
+tlc.c:514: warning: control reaches end of non-void function
+tlc.c: At top level:
+tlc.c:77: warning: 'camera_timer' defined but not used
+tlc.c:91: warning: 'vehicle_detected' defined but not used
+tlc.c:110: warning: 'traffic_lights' defined but not used
+Info: Linking cs303_a1.elf
+nios2-elf-g++  -T'../cs303_a1_bsp//linker.x' -msys-crt0='../cs303_a1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../cs303_a1_bsp/   -Wl,-Map=cs303_a1.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o cs303_a1.elf obj/default/tlc.o -lm 
+nios2-elf-insert cs303_a1.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "D:/compsys303" --sopcinfo D:/compsys303/system.sopcinfo
+Info: (cs303_a1.elf) 73 KBytes program size (code + initialized data).
+Info:                8111 KBytes free for stack + heap.
+Info: Creating cs303_a1.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source cs303_a1.elf >cs303_a1.objdump
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+[BSP build complete]
+Info: Compiling tlc.c to obj/default/tlc.o
+nios2-elf-gcc -xc -MP -MMD -c -I../cs303_a1_bsp//HAL/inc -I../cs303_a1_bsp/ -I../cs303_a1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/tlc.o tlc.c
+tlc.c: In function 'init_tlc':
+tlc.c:130: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'buttons_driver':
+tlc.c:158: warning: unused variable 'state'
+tlc.c: In function 'simple_tlc':
+tlc.c:211: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'init_buttons_pio':
+tlc.c:244: warning: implicit declaration of function 'alt_irq_register'
+tlc.c: In function 'pedestrian_tlc':
+tlc.c:294: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'configurable_tlc':
+tlc.c:376: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c: In function 'timeout_data_handler':
+tlc.c:400: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c: In function 'is_vehicle_detected':
+tlc.c:511: warning: control reaches end of non-void function
+tlc.c: In function 'is_vehicle_left':
+tlc.c:515: warning: control reaches end of non-void function
+tlc.c: At top level:
+tlc.c:77: warning: 'camera_timer' defined but not used
+tlc.c:91: warning: 'vehicle_detected' defined but not used
+tlc.c:110: warning: 'traffic_lights' defined but not used
+Info: Linking cs303_a1.elf
+nios2-elf-g++  -T'../cs303_a1_bsp//linker.x' -msys-crt0='../cs303_a1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../cs303_a1_bsp/   -Wl,-Map=cs303_a1.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o cs303_a1.elf obj/default/tlc.o -lm 
+nios2-elf-insert cs303_a1.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "D:/compsys303" --sopcinfo D:/compsys303/system.sopcinfo
+Info: (cs303_a1.elf) 72 KBytes program size (code + initialized data).
+Info:                8112 KBytes free for stack + heap.
+Info: Creating cs303_a1.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source cs303_a1.elf >cs303_a1.objdump
+[cs303_a1 build complete]
+
+**** Build Finished ****

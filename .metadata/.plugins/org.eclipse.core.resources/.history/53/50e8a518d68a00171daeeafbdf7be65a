@@ -347,6 +347,7 @@ void configurable_tlc(int* state)
 			if (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x4) {
 				timeout_data_handler();
 			}
+			break;
 			if (pedestrianNS) {
 				*state = GR_p;
 				pedestrianNS = 0;
@@ -357,6 +358,7 @@ void configurable_tlc(int* state)
 			if (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x4) {
 				timeout_data_handler();
 			}
+			break;
 			if (pedestrianEW) {
 				*state = RG_p;
 				pedestrianEW = 0;
@@ -388,7 +390,7 @@ void configurable_tlc(int* state)
 */
 void timeout_data_handler(void)
 {
-	printf("Entering timeout configuration mode.\n");
+	printf("Entering timeout configuration mode.");
 	return;
 	while(1) {
 		char c;

@@ -338,15 +338,18 @@ void configurable_tlc(int* state)
 	// Same as simple TLC
 	// with additional states / signals for Pedestrian crossings
 
-	// If the timeout has occurred
+	// If the timeout has occured
 	if (tlc_timer_event) {
 		alt_alarm_stop(&tlc_timer);
 		tlc_timer_event = 0;
 		switch(*state) {
 		case RR0:
+		case RR1:
 			if (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x4) {
 				timeout_data_handler();
 			}
+			break;
+		case RR0:
 			if (pedestrianNS) {
 				*state = GR_p;
 				pedestrianNS = 0;
@@ -354,9 +357,6 @@ void configurable_tlc(int* state)
 			else *state = GR;
 			break;
 		case RR1:
-			if (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x4) {
-				timeout_data_handler();
-			}
 			if (pedestrianEW) {
 				*state = RG_p;
 				pedestrianEW = 0;
@@ -388,8 +388,7 @@ void configurable_tlc(int* state)
 */
 void timeout_data_handler(void)
 {
-	printf("Entering timeout configuration mode.\n");
-	return;
+	printf("Entering timeout configuration mode.");
 	while(1) {
 		char c;
 		unsigned int num = 0;

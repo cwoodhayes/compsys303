@@ -388,8 +388,7 @@ void configurable_tlc(int* state)
 */
 void timeout_data_handler(void)
 {
-	printf("Entering timeout configuration mode.\n");
-	return;
+	printf("Entering timeout configuration mode.");
 	while(1) {
 		char c;
 		unsigned int num = 0;

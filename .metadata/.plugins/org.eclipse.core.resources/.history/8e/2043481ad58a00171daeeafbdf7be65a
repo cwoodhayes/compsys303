@@ -338,15 +338,16 @@ void configurable_tlc(int* state)
 	// Same as simple TLC
 	// with additional states / signals for Pedestrian crossings
 
-	// If the timeout has occurred
+	// If the timeout has occured
 	if (tlc_timer_event) {
 		alt_alarm_stop(&tlc_timer);
 		tlc_timer_event = 0;
 		switch(*state) {
 		case RR0:
-			if (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x4) {
-				timeout_data_handler();
-			}
+		case RR1:
+			if (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x4)
+
+		case RR0:
 			if (pedestrianNS) {
 				*state = GR_p;
 				pedestrianNS = 0;
@@ -354,9 +355,6 @@ void configurable_tlc(int* state)
 			else *state = GR;
 			break;
 		case RR1:
-			if (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x4) {
-				timeout_data_handler();
-			}
 			if (pedestrianEW) {
 				*state = RG_p;
 				pedestrianEW = 0;
@@ -379,6 +377,30 @@ void configurable_tlc(int* state)
 }
 
 
+/* DESCRIPTION: Implements the state machine of the traffic light controller in
+ *              the ***configuration*** phase
+ * PARAMETER:   tl_state - state of the traffic light
+ * RETURNS:     Returns the state of the configuration phase
+ */
+/*
+Puts the TLC in a 'safe' state... then begins update
+*/
+int config_tlc(int* tl_state)
+{
+	// State of configuration
+	static int state = 0;
+
+	if (*tl_state == -1) {
+		// Process initialization state
+		init_tlc();
+		(*tl_state)++;
+		return 0;
+	}
+
+	return state;
+}
+
+
 /* DESCRIPTION: Parses the configuration string and updates the timeouts
  * PARAMETER:   none
  * RETURNS:     none
@@ -388,8 +410,6 @@ void configurable_tlc(int* state)
 */
 void timeout_data_handler(void)
 {
-	printf("Entering timeout configuration mode.\n");
-	return;
 	while(1) {
 		char c;
 		unsigned int num = 0;
