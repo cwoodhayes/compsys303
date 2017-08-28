@@ -336,6 +336,7 @@ void timeout_data_handler(void)
 {
 	uart_fp = fopen(UART_NAME, "w");
 	fprintf(uart_fp, "Entering timeout configuration mode.\n\33[2K\r");
+	fscanf(uart_fp, "%d\n");
 	while(1) {
 		char c;
 		unsigned int num = 0;

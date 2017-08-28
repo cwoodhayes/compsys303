@@ -3387,3 +3387,438 @@ java.lang.Exception
 
 !ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:13:47.290
 !MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:16:31.195
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:16:31.686
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:16:33.419
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:19:49.697
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:19:50.179
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:19:51.903
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:20:23.420
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:20:23.861
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:20:24.987
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:20:25.512
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:20:28.617
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=0x10110b0] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:20:28.670
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:20:29.718
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0x10110b0, /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:20:29.722
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:20:31.508
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0x10110b0, /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:20:31.511
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:20:36.242
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:20:37.934
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:21:37.139
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:21:38.861
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:24:10.245
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:24:10.727
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:24:12.456
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:25:19.729
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:25:20.378
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:25:22.071
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:25:55.493
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:25:55.981
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:25:57.684
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:30:40.889
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:30:41.388
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:30:43.107
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:31:07.742
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:31:08.222
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:31:09.922
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:31:41.529
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:31:42.033
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:31:43.738
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:31:48.027
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0x10110b0, /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf] return code: 134
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:31:48.030
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:31:53.644
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:31:55.357
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:32:37.973
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:32:38.459
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:32:40.230
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:32:43.805
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0x10110b0, /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:32:43.808
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:32:50.512
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:32:52.251
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:35:25.672
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:35:26.162
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:35:27.890
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:36:31.939
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:36:32.452
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:36:34.183
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:39:37.825
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:39:38.332
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:39:40.042
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:40:43.497
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:40:43.993
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:40:45.702
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:40:49.136
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0x10110b0, /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:40:49.138
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:41:00.695
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:41:02.429
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:42:16.747
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:42:18.775
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:42:21.449
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=0x10110b0] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:42:21.522
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:42:24.545
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0x10110b0, /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:42:24.548
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:46:56.476
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:46:58.200
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:47:59.442
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:47:59.927
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:48:03.105
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=0x10110b0] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:48:03.179
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:48:06.080
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0x10110b0, /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:48:06.083
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:48:11.508
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:48:13.225
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:48:59.620
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:49:00.090
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:49:01.786
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:50:51.348
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:50:51.965
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:50:53.639
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:54:01.796
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:54:02.303
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:54:03.996
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:59:42.504
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:59:43.099
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:59:44.838
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:59:48.310
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0x10110b0, /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 11:59:48.313
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:59:53.752
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 11:59:55.485
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:01:26.314
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:01:26.798
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:01:28.511
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:01:52.640
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:01:53.164
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:01:54.911
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:03:42.711
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:03:43.348
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:03:45.121
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:04:17.505
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:04:18.023
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:04:19.993
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:05:00.250
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:05:02.577
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:07:01.310
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:07:01.817
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 12:07:05.025
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=0x10110b0] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:07:05.100
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 12:07:08.015
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0x10110b0, /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 12:07:08.018
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:07:12.715
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:07:14.438
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:07:51.989
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:07:52.479
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:07:54.210
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:08:33.129
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:08:33.622
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:08:35.307
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:08:58.776
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:08:59.251
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:09:00.953
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 12:09:06.934
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0x10110b0, /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf] return code: 134
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 12:09:06.936
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:09:12.427
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:09:14.173
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:10:36.340
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:10:36.813
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:10:38.559
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:11:58.550
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:11:59.049
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:12:00.779
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:21:14.037
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:21:14.506
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:21:16.153
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:26:10.150
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:26:11.615
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-08-28 12:26:14.302
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=0x10110b0] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-08-28 12:26:14.377
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/software/cs303_a1/cs303_a1.elf]

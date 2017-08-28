@@ -343,7 +343,7 @@ void timeout_data_handler(void)
 		do {
 			c = fgetc(uart_fp);
 			fputc(uart_fp, c);
-			printf("%c", c);
+			putc(c);
 			if (c <= '9' && c >= '0') {
 				num += atoi(c);
 				num *= 10;

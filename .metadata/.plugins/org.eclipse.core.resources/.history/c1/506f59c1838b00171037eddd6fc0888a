@@ -342,8 +342,6 @@ void timeout_data_handler(void)
 		timeout_buf.index = 0;
 		do {
 			c = fgetc(uart_fp);
-			fputc(uart_fp, c);
-			printf("%c", c);
 			if (c <= '9' && c >= '0') {
 				num += atoi(c);
 				num *= 10;
@@ -359,11 +357,6 @@ void timeout_data_handler(void)
 		else; //try again
 	}
 	fclose(uart_fp);
-}
-
-void buffer_timeout(unsigned int value) {
-	timeout_buf.timeout[timeout_buf.index] = value;
-	timeout_buf.index= (timeout_buf.index+1)%sizeof(timeout_buf.timeout);
 }
 
 
