@@ -369,12 +369,12 @@ void timeout_data_handler(void)
 void buffer_timeout(unsigned int value) {
 	timeout_buf.timeout[timeout_buf.index] = value;
 	timeout_buf.index= (timeout_buf.index+1)%6;
-//	printf("timeout value (%d) added. Current buffer contents: ", value);
-//	int i=0;
-//	for (; i<timeout_buf.index; i++) {
-//		printf("%d,", timeout_buf.timeout[i]);
-//	}
-//	printf("\n");
+	printf("timeout value (%d) added. Current buffer contents: ", value);
+	int i=0;
+	for (; i<timeout_buf.index; i++) {
+		printf("%d,", timeout_buf.timeout[i]);
+	}
+	printf("\n");
 }
 
 
@@ -391,7 +391,7 @@ void buffer_timeout(unsigned int value) {
  */
 int update_timeout(void)
 {
-
+	printf("index: %d, sizeof timeout-1: %d", timeout_buf.index, sizeof(timeout_buf.timeout)-1);
 	if (timeout_buf.index != 0) {
 		//We didn't receive 6 numbers.  Packet rx failure
 		fprintf(uart_fp, "Invalid packet received: ");
@@ -407,9 +407,9 @@ int update_timeout(void)
 		//valid packet received. transfer the data into the timeout array.
 		fprintf(uart_fp, "timeout values updated: ");
 		int i=0;
-		for (; i<6; i++) {
+		for (; i<timeout_buf.index; i++) {
 			timeout[i] = timeout_buf.timeout[i];
-			fprintf(uart_fp, "%d,",timeout[i]);
+			printf("%d,",timeout[i]);
 		}
 		fprintf(uart_fp, "\n");
 		timeout_buf.index = 0;

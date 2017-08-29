@@ -18,18 +18,17 @@ tlc.c:224: warning: implicit declaration of function 'alt_irq_register'
 tlc.c: In function 'pedestrian_tlc':
 tlc.c:284: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
 tlc.c: In function 'timeout_data_handler':
-tlc.c:348: warning: passing argument 1 of 'fputc' makes integer from pointer without a cast
-tlc.c:348: warning: passing argument 2 of 'fputc' makes pointer from integer without a cast
-tlc.c:351: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast
+tlc.c:347: warning: too many arguments for format
+tlc.c:347: warning: too many arguments for format
 tlc.c: In function 'camera_tlc':
-tlc.c:452: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
+tlc.c:461: warning: passing argument 4 of 'alt_alarm_start' discards qualifiers from pointer target type
 tlc.c: At top level:
 tlc.c:107: warning: 'traffic_lights' defined but not used
 Info: Linking cs303_a1.elf
 nios2-elf-g++  -T'../cs303_a1_bsp//linker.x' -msys-crt0='../cs303_a1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../cs303_a1_bsp/   -Wl,-Map=cs303_a1.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o cs303_a1.elf obj/default/tlc.o -lm 
 nios2-elf-insert cs303_a1.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "D:/compsys303" --sopcinfo D:/compsys303/system.sopcinfo
 Info: (cs303_a1.elf) 72 KBytes program size (code + initialized data).
-Info:                8112 KBytes free for stack + heap.
+Info:                8111 KBytes free for stack + heap.
 Info: Creating cs303_a1.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source cs303_a1.elf >cs303_a1.objdump
 [cs303_a1 build complete]
