@@ -120,8 +120,7 @@ void init_tlc(void)
 {
 	printf("Initializing TLC...\n");
 	//setup UART file pointer
-	uart_fp = fopen(UART_NAME, "w");
-
+	uart_fp = fopen(UART_NAME, "r+");
 	//start the TLC timer
 	alt_alarm_stop(&tlc_timer);
 	alt_alarm_start(&tlc_timer, timeout[proc_state[mode]], tlc_timer_isr, &tlc_timer_event);
@@ -334,8 +333,7 @@ void configurable_tlc(int* state)
 */
 void timeout_data_handler(void)
 {
-	char newline_character = '\r'; 	//change to \n when putty gets its ass in gear.
-	uart_fp = fopen(UART_NAME, "r+");
+	char newline_character = '\n'; 	//make sure PuTTy is actually sending \n, not \r.
 	fprintf(uart_fp, "Entering timeout configuration mode.\n\33[2K\r");
 	while(1) {
 		char c;
@@ -344,7 +342,7 @@ void timeout_data_handler(void)
 		timeout_buf.index = 0;
 		do {
 			c = fgetc(uart_fp);
-			printf("%c", c, (int) c);
+			fprintf(uart_fp, "%c", c, (int) c);
 			if (c <= '9' && c >= '0') {
 				num *= 10;
 				num += c - '0';
@@ -360,10 +358,9 @@ void timeout_data_handler(void)
 		} while (c != newline_character && timeouts_recieved < 6);
 		if (update_timeout()) return;
 		else {
-			printf("Invalid timeout config string. Try again.\n"); //try again
+			fprintf(uart_fp,"Invalid timeout config string. Try again.\n"); //try again
 		}
 	}
-	fclose(uart_fp);
 }
 
 void buffer_timeout(unsigned int value) {
@@ -450,7 +447,7 @@ void camera_tlc(int* state)
 			vehicle_detected = 0;
 			int ticks_elapsed = alt_nticks() - camera_start_time;
 			double secs_elapsed = (double) ticks_elapsed/ (double) alt_ticks_per_second();
-			printf("Vehicle left after %.3fs (%d ticks).\n", secs_elapsed, ticks_elapsed);
+			fprintf(uart_fp, "Vehicle left after %.3fs (%d ticks).\n", secs_elapsed, ticks_elapsed);
 		}
 		else {
 			//a vehicle is entering the intersection.  We only care
@@ -460,7 +457,7 @@ void camera_tlc(int* state)
 				camera_timer_event = 0;
 				alt_alarm_start(&camera_timer, camera_timeout, camera_timer_isr, &camera_timer_event);
 				camera_start_time = alt_nticks();
-				printf("Camera activated.\n");
+				fprintf(uart_fp, "Camera activated.\n");
 			}
 		}
 	}
@@ -468,20 +465,12 @@ void camera_tlc(int* state)
 		//snapshot taken
 		alt_alarm_stop(&camera_timer);
 		camera_timer_event = 0;
-		printf("Snapshot taken.\n");
+		fprintf(uart_fp, "Snapshot taken.\n");
 	}
 }
 
-
-/* DESCRIPTION: Simulates the entry and exit of vehicles at the intersection
- * PARAMETER:   none
- * RETURNS:     none
- */
-void handle_vehicle_button(void)
-{
-
-}
-
+//Handle the lighting of the traffic/pedestrian light LED's depending upon
+//the current tlc_fsm state.
 void update_traffic_lights(void) {
 	switch (proc_state[mode]) {
 	case RR0:
@@ -517,8 +506,6 @@ int main(void)
 {
 	init_buttons_pio();			// initialize buttons
 	while (1) {
-		// Button detection & debouncing
-
 		// if Mode switches change:
 		if (mode != (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x3)) {
 			proc_state[mode] = -1;
@@ -527,11 +514,8 @@ int main(void)
 			lcd_set_mode(mode);
 		}
 
-		// if Car button pushed...
-			// handle_vehicle_button
-
 		// Execute the correct TLC
-    	switch (mode) {
+    		switch (mode) {
 			case 0:
 				simple_tlc(&proc_state[0]);
 				break;
@@ -545,9 +529,8 @@ int main(void)
 				camera_tlc(&proc_state[3]);
 				break;
 		}
-		// Update Displays
-    	// Update LED display:
-    	update_traffic_lights();
+    		// Update LED display:
+    		update_traffic_lights();
 
 	}
 	return 1;
