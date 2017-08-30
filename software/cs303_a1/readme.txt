@@ -1,26 +1,30 @@
-Readme - Hello World Software Example
+#Readme for COMPSYS303 Assignment 1
+###Authors: Conor Hayes and Dallas Watene (Group 34)
 
-DESCRIPTION:
-Simple program that prints "Hello from Nios II"
+All top-level source code for this project is contained in the 'tlc.c' file.
+It provides functionality for the four specified traffic-light controller
+modes, implemented using the NIOS HAL libraries for the NIOS II processor.
 
-The memory footprint of this hosted application is intended to be small (under 100 kbytes) by default
-using a standard reference deisgn.
+####TLC I/O
+###Buttons:
+Key0: NS pedestrian walk request
+Key1: EW pedestrian walk request
+Key2: Car enter/exit intersection button.
 
-For an even smaller, reduced footprint version of this template, and an explanation of how
-to reduce the memory footprint for a given application, see the
-"small_hello_world" template.
+###LED's:
+Green LED0: NS-green
+Green LED1: NS-yellow
+Green LED2: NS-red
+Green LED3: EW-green
+Green LED4: EW-yellow
+Green LED5: EW-red
+Green LED6: NS pedestrian crossing 
+Green LED7: EW pedestrian crossing
 
-
-PERIPHERALS USED:
-This example exercises the following peripherals:
-- STDOUT device (UART or JTAG UART)
-
-SOFTWARE SOURCE FILES:
-This example includes the following software source files:
-- hello_world.c: Everyone needs a Hello World program, right?
-
-BOARD/HOST REQUIREMENTS:
-This example requires only a JTAG connection with a Nios Development board. If
-the host communication settings are changed from JTAG UART (default) to use a
-conventional UART, a serial cable between board DB-9 connector  and the host is
-required.
+###Switches:
+Switch0: Mode[0]
+Switch1: Mode[1]. Mode is a two-bit value determined by Switch0 and
+Switch1--i.e., To enter mode 1, Mode = 00; mode 2 = 01; mode 3 = 10; mode 4 =
+11.
+Switch2: Configure timeouts. Switch ON to enter timeout configuration mode
+at the next red-red state. 
