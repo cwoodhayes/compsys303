@@ -1,0 +1,9 @@
+scchart pacemaker {
+
+    initial state top {
+    	input signal Vsense, Asense;
+    	output signal Apulse, Apulse;
+    	
+    	
+    };
+}
