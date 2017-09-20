@@ -1,0 +1,33 @@
+scchart pacemaker {
+
+    initial state top {
+      	//sensors and actuators
+    	input signal Vsense, Asense;
+    	output signal Vpulse, Apulse;
+    	
+    	bool V = Vsense || Vpulse;
+    	
+    	//timer signals
+    	input signal PVARP_t, VRP_t, AEI_t, AVI_t, URI_t, LRI_t;
+    	
+    	initial state AVI --> AEI with (1)
+    	--> AEI;
+    	state AEI --> AVI with (1);
+    	
+    	
+//    	region AVI:
+//    		initial state active;
+//    	region AEI:
+//    		initial state active_pvarp_vrp;
+//    		
+//    	region LRI:
+//    		initial state active 
+//    		--> active with Vsense 
+//    		--> active with LRI_done / Vpulse;
+//    	region URI:
+//    		initial state active
+//    		--> inactive with URI_done / URI_reset;
+//    		state inactive
+//    		--> active with V;
+    };
+}

@@ -30,7 +30,8 @@ scchart pacemaker {
     	
     	state qAVI
     	--> qStartRI with VS
-    	--> qStartRI with (AVI_t && URI_t) || LRI_t / VP;
+    	--> qStartRI with LRI_t / VP
+    	--> qStartRI with (AVI_t && URI_t) / VP;
     	
     	
     	

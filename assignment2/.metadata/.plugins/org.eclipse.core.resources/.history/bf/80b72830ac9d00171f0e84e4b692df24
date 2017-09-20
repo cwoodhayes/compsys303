@@ -23,14 +23,9 @@ scchart pacemaker {
     	--> qAEI with VRP_t
     	--> qAVI with AS;
     	
-    	state qAEI
-    	--> qAVI with AS
-    	--> qAVI with AEI_t / AP
-    	--> qStartRI with LRI_t/VP;
+    	state qAEI;
     	
-    	state qAVI
-    	--> qStartRI with VS
-    	--> qStartRI with (AVI_t && URI_t) || LRI_t / VP;
+    	state qAVI;
     	
     	
     	
