@@ -46,15 +46,7 @@ static alt_alarm LRI_timer,
 	AVI_timer,
 	URI_timer;
 
-//timer ISR declarations
-
-DECLARE_TIMER_ISR (LRI) {
-
-}
-
-DECLARE_TIMER_ISR (URI) {
-
-}
+DECLARE_TIMER_ISR ()
 
 int main()
 {

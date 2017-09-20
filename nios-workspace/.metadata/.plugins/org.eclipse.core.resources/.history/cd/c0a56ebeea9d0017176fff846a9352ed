@@ -31,8 +31,6 @@ char _pacemaker_local_URI_t;
 
 //Macro for making FSM variables less of a mouthful
 #define FSMVAR(NAME) _pacemaker_local_##NAME
-//Macro for declaring timer ISR's
-#define DECLARE_TIMER_ISR(NAME) alt_u32 NAME##_timer_isr(void* context)
 //Macro for restarting a timer
 #define RESTART_TIMER(NAME) \
 		alt_alarm_stop(& NAME##_timer); \
@@ -46,16 +44,6 @@ static alt_alarm LRI_timer,
 	AVI_timer,
 	URI_timer;
 
-//timer ISR declarations
-
-DECLARE_TIMER_ISR (LRI) {
-
-}
-
-DECLARE_TIMER_ISR (URI) {
-
-}
-
 int main()
 {
 	reset();
@@ -64,6 +52,7 @@ int main()
 		if (FSMVAR(StartRI) ) {
 			RESTART_TIMER(URI);
 			RESTART_TIMER(LRI);
+
 		}
 
 		tick();
