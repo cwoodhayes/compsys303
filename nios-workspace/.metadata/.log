@@ -11,3 +11,9 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.
 
 !ENTRY org.eclipse.cdt.core 1 0 2017-09-20 21:12:22.135
 !MESSAGE Indexed 'pacemaker' (1 sources, 13 headers) in 0.02 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-09-20 21:27:31.052
+!MESSAGE Indexed 'cs303_a1_bsp' (88 sources, 135 headers) in 1.09 sec: 4,684 declarations; 6,669 references; 0 unresolved inclusions; 3 syntax errors; 18 unresolved names (0.16%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-09-20 21:27:31.274
+!MESSAGE Indexed 'cs303_a1' (1 sources, 68 headers) in 0.22 sec: 3,112 declarations; 2,942 references; 6 unresolved inclusions; 2 syntax errors; 36 unresolved names (0.59%)

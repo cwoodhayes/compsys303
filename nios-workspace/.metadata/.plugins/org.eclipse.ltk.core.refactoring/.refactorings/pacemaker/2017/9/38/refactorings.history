@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;pacemaker/hello_world.c&apos; to &apos;main.c&apos;" description="Rename resource &apos;hello_world.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="hello_world.c" name="main.c" stamp="1505898764516" updateReferences="true"/>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;pacemaker/hello_world.c&apos; to &apos;main.c&apos;" description="Rename resource &apos;hello_world.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="hello_world.c" name="main.c" stamp="1505898764516" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;pacemaker/pacemaker.h&apos; to &apos;pacemaker_fsm.h&apos;" description="Rename resource &apos;pacemaker.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="pacemaker.h" name="pacemaker_fsm.h" stamp="1505899225010" updateReferences="true"/>
 </session>
