@@ -1,0 +1,8 @@
+
+**** Build of configuration Nios II for project cs303_a1_bsp ****
+
+make all 
+makefile:571: Warning: SOPC File D:/compsys303/system.sopcinfo could not be found.
+[BSP build complete]
+
+**** Build Finished ****

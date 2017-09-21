@@ -25,15 +25,19 @@ char _pacemaker_local_URI_t;
 #define URI_VALUE 900
  *
  */
-
 #include <stdio.h>
 #include "pacemaker_fsm.h"
+#include <sys/alt_alarm.h>
+#include <sys/alt_irq.h>
+#include <altera_avalon_pio_regs.h>
+#include <alt_types.h>
+#include <system.h>
 
 //Macro for making FSM variables less of a mouthful
 #define FSMVAR(NAME) _pacemaker_local_##NAME
 
 //Macros for declaring and using timer ISR's, since they always do the same thing here
-#define DECLARE_TIMER_ISR(NAME) int/*alt_u32*/ NAME##_timer_isr(void* context) \
+#define DECLARE_TIMER_ISR(NAME) alt_u32 NAME##_timer_isr(void* context) \
 { 	volatile int* trigger = (volatile int*)context; \
 	*trigger = 1; \
 	return 0; }
@@ -43,9 +47,9 @@ char _pacemaker_local_URI_t;
 #define RESTART_TIMER(NAME) \
 		alt_alarm_stop(& NAME##_timer); \
 		alt_alarm_start(& NAME##_timer, NAME##_VALUE, NAME##_timer_isr, \
-		FSMVAR(NAME##_t) )
+		& FSMVAR(NAME##_t) )
 
-static int/*alt_alarm*/ LRI_timer,
+static alt_alarm LRI_timer,
 	PVARP_timer,
 	VRP_timer,
 	AEI_timer,
@@ -53,12 +57,12 @@ static int/*alt_alarm*/ LRI_timer,
 	URI_timer;
 
 //timer ISR declarations
-DECLARE_TIMER_ISR (LRI)
 DECLARE_TIMER_ISR (URI)
+DECLARE_TIMER_ISR (AVI)
+DECLARE_TIMER_ISR (LRI)
 DECLARE_TIMER_ISR (PVARP)
 DECLARE_TIMER_ISR (VRP)
 DECLARE_TIMER_ISR (AEI)
-DECLARE_TIMER_ISR (URI)
 
 
 
@@ -75,9 +79,9 @@ int main()
 			RESTART_TIMER(VRP);
 			RESTART_TIMER(AEI);
 		}
-		if (FSMVAR(StartAVI) ) {
-			RESTART_TIMER(AVI);
-		}
+//		if (FSMVAR(StartAVI) ) {
+//			RESTART_TIMER(AVI);
+//		}
 		tick();
 	}
 }

@@ -4,6 +4,9 @@
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.528415169;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.528415169.;cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base.130172108;cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin.1157779255">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="D:/compsys303/assignment2/pacemaker_bsp/HAL/inc"/>
+<includePath path="D:/compsys303/assignment2/pacemaker_bsp"/>
+<includePath path="D:/compsys303/assignment2/pacemaker_bsp/drivers/inc"/>
 <includePath path="C:\altera\13.0\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++"/>
 <includePath path="C:\altera\13.0\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++\i686-pc-cygwin"/>
 <includePath path="C:\altera\13.0\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++\backward"/>
@@ -221,10 +224,17 @@
 <definedSymbol symbol="unix=1"/>
 <definedSymbol symbol="__unix__=1"/>
 <definedSymbol symbol="__unix=1"/>
+<definedSymbol symbol="SYSTEM_BUS_WIDTH=32"/>
+<definedSymbol symbol="__hal__=1"/>
+<definedSymbol symbol="ALT_NO_INSTRUCTION_EMULATION=1"/>
+<definedSymbol symbol="ALT_SINGLE_THREADED=1"/>
 </collector>
 </instance>
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.528415169;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.528415169.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.base.919445821;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.1551130867">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="D:/compsys303/assignment2/pacemaker_bsp/HAL/inc"/>
+<includePath path="D:/compsys303/assignment2/pacemaker_bsp"/>
+<includePath path="D:/compsys303/assignment2/pacemaker_bsp/drivers/inc"/>
 <includePath path="C:\altera\13.0\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include"/>
 <includePath path="C:\altera\13.0\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include-fixed"/>
 <includePath path="C:\altera\13.0\quartus\bin\cygwin\usr\include"/>
@@ -432,6 +442,10 @@
 <definedSymbol symbol="unix=1"/>
 <definedSymbol symbol="__unix__=1"/>
 <definedSymbol symbol="__unix=1"/>
+<definedSymbol symbol="SYSTEM_BUS_WIDTH=32"/>
+<definedSymbol symbol="__hal__=1"/>
+<definedSymbol symbol="ALT_NO_INSTRUCTION_EMULATION=1"/>
+<definedSymbol symbol="ALT_SINGLE_THREADED=1"/>
 </collector>
 </instance>
 </scannerInfo>
