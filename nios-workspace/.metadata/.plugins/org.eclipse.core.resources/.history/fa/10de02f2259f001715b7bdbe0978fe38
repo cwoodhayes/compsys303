@@ -68,8 +68,7 @@ DECLARE_TIMER_ISR (AEI)
 
 void output() {
 
-	//LED handling. LEDG0 represents a ventricular event while
-	//LEDG1 simulates an atrial event
+	//LED handling
 	int led_reg = 0;
 	if (AS) led_reg |= 0x1;
 	if (VS) led_reg |= 0x2;

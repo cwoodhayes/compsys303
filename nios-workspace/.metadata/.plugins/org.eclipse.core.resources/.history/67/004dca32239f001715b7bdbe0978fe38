@@ -35,7 +35,7 @@ char StartRI;
 #include <system.h>
 
 //Macro for making FSM variables less of a mouthful
-// (sometimes they have extra names attached to them)
+// (sometimes they have extra names attached to them
 #define FSMVAR(NAME) NAME
 
 //Macros for declaring and using timer ISR's, since they always do the same thing here
@@ -68,11 +68,15 @@ DECLARE_TIMER_ISR (AEI)
 
 void output() {
 
-	//LED handling. LEDG0 represents a ventricular event while
-	//LEDG1 simulates an atrial event
+	//LED handling
 	int led_reg = 0;
-	if (AS) led_reg |= 0x1;
-	if (VS) led_reg |= 0x2;
+	printf("---------------");
+	printf("AP=%d\n", AP);
+	printf("---------------");
+	printf("AP=%d\n", VP);
+	printf("---------------");
+	if (AP) led_reg |= 0x1;
+	if (VP) led_reg |= 0x2;
 	IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,led_reg);
 }
 
@@ -84,6 +88,9 @@ int main()
 	IOWR_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE, 0);
 	int buttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 	int newbuttons;
+
+	//debug variables
+	char AP_old=-1, VP_old=-1;
 
 	while (1) {
 		//reset and start URI and LRI timers if necessary
@@ -101,11 +108,23 @@ int main()
 		//button handling
 		newbuttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 		if (newbuttons != buttons) {
+			//do stuff
 			buttons = newbuttons;
 			AS = buttons & (1 << 0);
 			VS = buttons & (1 << 1);
+			printf("buttons: %02x", buttons);
 		}
 		tick();
+
 		output();
+
+		if (AP_old != AP) {
+			printf("AP=%d\n", AP);
+			AP_old=AP;
+		}
+		if (VP_old != VP) {
+			printf("VP=%d\n", VP);
+			VP_old=VP;
+		}
 	}
 }
