@@ -80,9 +80,9 @@ int main()
 			RESTART_TIMER(VRP);
 			RESTART_TIMER(AEI);
 		}
-		if (FSMVAR(StartAVI) ) {
-			RESTART_TIMER(AVI);
-		}
+//		if (FSMVAR(StartAVI) ) {
+//			RESTART_TIMER(AVI);
+//		}
 		tick();
 	}
 }

@@ -1,12 +1,28 @@
-/*
- * pacemaker_fsm.c
- *
- *  Created on: 20/09/2017
- *      Author: chay774
- */
-
-#include "pacemaker_fsm.h"
-
+/*****************************************************************************/
+/*                 G E N E R A T E D       C    C O D E                      */
+/*****************************************************************************/
+/* KIELER - Kiel Integrated Environment for Layout Eclipse RichClient        */
+/*                                                                           */
+/* http://www.informatik.uni-kiel.de/rtsys/kieler/                           */
+/* Copyright 2014 by                                                         */
+/* + Kiel University                                                         */
+/*   + Department of Computer Science                                        */
+/*     + Real-Time and Embedded Systems Group                                */
+/*                                                                           */
+/* This code is provided under the terms of the Eclipse Public License (EPL).*/
+/*****************************************************************************/
+char AS;
+char AP;
+char LRI_t;
+char StartAVI;
+char VS;
+char VP;
+char PVARP_t;
+char VRP_t;
+char AEI_t;
+char AVI_t;
+char URI_t;
+char StartRI;
 char g0;
 char g1;
 char g2;
@@ -81,9 +97,9 @@ void tick(){
    {
       g0 = _GO;
       g1 = g0;
-      g28 =(PRE_g27);
       g26 = g0;
-      g27 =(g28||g26);
+      g28 =(PRE_g27);
+      g27 =(g26||g28);
       if(g27){
          VP = 0;
          AP = 0;
@@ -102,17 +118,17 @@ void tick(){
       }
       g12 =(PRE_g11);
       _cg12 = VS;
-      g23 =(PRE_g22);
-      _cg23 = PVARP_t;
-      g24 =(g23&&(!(_cg23)));
-      _cg24 = VS;
       g13 =(g12&&(!(_cg12)));
       _cg13 =((AVI_t&&URI_t)||LRI_t);
       g14 =(g13&&_cg13);
       if(g14){
          VP =(VP||1);
       }
-      g2 =(g18||(g12&&_cg12)||g1||(g24&&_cg24)||g14);
+      g23 =(PRE_g22);
+      _cg23 = PVARP_t;
+      g24 =(g23&&(!(_cg23)));
+      _cg24 = VS;
+      g2 =(g18||(g12&&_cg12)||g14||(g24&&_cg24)||g1);
       g3 =(PRE_g2);
       g3b = g3;
       if(g3b){
@@ -122,13 +138,13 @@ void tick(){
       _cg5 = PVARP_t;
       g21 =(g5&&(!(_cg5)));
       _cg21 = VRP_t;
-      g4 =((g21&&(!(_cg21)))||g3b);
+      g4 =(g3b||(g21&&(!(_cg21))));
       g7 =(PRE_g6);
       _cg7 = VRP_t;
       g19 =(g7&&(!(_cg7)));
       _cg19 = AS;
-      g6 =((g5&&_cg5)||(g19&&(!(_cg19))));
-      g8 =((g7&&_cg7)||(g23&&_cg23)||(g17&&(!(_cg17))));
+      g6 =((g19&&(!(_cg19)))||(g5&&_cg5));
+      g8 =((g7&&_cg7)||(g17&&(!(_cg17)))||(g23&&_cg23));
       g10 =(g9&&_cg9);
       if(g10){
          StartAVI =(StartAVI||1);
@@ -145,7 +161,7 @@ void tick(){
       if(g20){
          StartAVI =(StartAVI||1);
       }
-      g11 =(g16b||g10||g20||(g13&&(!(_cg13))));
+      g11 =((g13&&(!(_cg13)))||g10||g16b||g20);
       g22 =((g21&&_cg21)||(g24&&(!(_cg24))));
       g25_e1 =(!((g3||g5||g7||g23||g9||g12)));
       g29_e2 =(!(g28));

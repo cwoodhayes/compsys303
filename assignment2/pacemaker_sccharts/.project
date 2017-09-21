@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>pacemaker</name>
+	<name>pacemaker_sccharts</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -10,8 +10,14 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>de.cau.cs.kieler.prom.KiCoBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
+		<nature>de.cau.cs.kieler.prom.KiCoNature</nature>
 	</natures>
 </projectDescription>
