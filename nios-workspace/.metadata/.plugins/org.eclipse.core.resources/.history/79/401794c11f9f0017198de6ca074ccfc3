@@ -84,8 +84,6 @@ int main()
 	int buttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 	int newbuttons;
 
-	//debug variables
-	char AP_old=-1, VP_old=-1;
 
 	while (1) {
 		//reset and start URI and LRI timers if necessary
@@ -107,19 +105,10 @@ int main()
 			buttons = newbuttons;
 			AS = buttons & (1 << 0);
 			VS = buttons & (1 << 1);
-			printf("buttons: %02x", buttons);
+			printf("buttons: %08x", buttons);
 		}
 		tick();
 
 		output();
-
-		if (AP_old != AP) {
-			printf("AP=%d\n", AP);
-			AP_old=AP;
-		}
-		if (VP_old != VP) {
-			printf("VP=%d\n", VP);
-			VP_old=VP;
-		}
 	}
 }

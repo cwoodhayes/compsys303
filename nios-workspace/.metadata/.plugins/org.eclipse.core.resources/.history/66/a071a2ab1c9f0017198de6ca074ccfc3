@@ -5,18 +5,17 @@
  */
 
 /*
-char AS;
-char AP;
-char LRI_t;
-char StartAVI;
-char VS;
-char VP;
-char PVARP_t;
-char VRP_t;
-char AEI_t;
-char AVI_t;
-char URI_t;
-char StartRI;
+char _pacemaker_local_AS;
+char _pacemaker_local_AP;
+char _pacemaker_local_LRI_t;
+char _pacemaker_local_StartRI;
+char _pacemaker_local_VS;
+char _pacemaker_local_VP;
+char _pacemaker_local_PVARP_t;
+char _pacemaker_local_VRP_t;
+char _pacemaker_local_AEI_t;
+char _pacemaker_local_AVI_t;
+char _pacemaker_local_URI_t;
 
 #define AVI_VALUE 300
 #define AEI_VALUE 800
@@ -66,27 +65,11 @@ DECLARE_TIMER_ISR (PVARP)
 DECLARE_TIMER_ISR (VRP)
 DECLARE_TIMER_ISR (AEI)
 
-void output() {
 
-	//LED handling
-	int led_reg = 0;
-	if (AP) led_reg |= 0x1;
-	if (VP) led_reg |= 0x2;
-	IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,led_reg);
-}
 
 int main()
 {
 	reset();
-
-	//initialise the button registers
-	IOWR_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE, 0);
-	int buttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
-	int newbuttons;
-
-	//debug variables
-	char AP_old=-1, VP_old=-1;
-
 	while (1) {
 		//reset and start URI and LRI timers if necessary
 		//also start pvarp, vrp, and aei, although they should have stopped long before
@@ -100,26 +83,6 @@ int main()
 		if (FSMVAR(StartAVI) ) {
 			RESTART_TIMER(AVI);
 		}
-		//button handling
-		newbuttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
-		if (newbuttons != buttons) {
-			//do stuff
-			buttons = newbuttons;
-			AS = buttons & (1 << 0);
-			VS = buttons & (1 << 1);
-			printf("buttons: %02x", buttons);
-		}
 		tick();
-
-		output();
-
-		if (AP_old != AP) {
-			printf("AP=%d\n", AP);
-			AP_old=AP;
-		}
-		if (VP_old != VP) {
-			printf("VP=%d\n", VP);
-			VP_old=VP;
-		}
 	}
 }

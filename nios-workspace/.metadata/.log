@@ -27,3 +27,37 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.
 
 !ENTRY org.eclipse.core.resources 2 10035 2017-09-22 09:00:24.279
 !MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2017-09-22 10:25:06.190 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.debug.core 4 102 2017-09-22 10:52:25.853
+!MESSAGE A project was not specified in the launch configuration.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-09-22 10:52:44.411
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x10110b0 --id=0x1276afde --timestamp=1502656663]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-09-22 10:52:46.579
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x10110b0 --id=0x1276afde --timestamp=1502656663 /cygdrive/d/compsys303/assignment2/pacemaker/pacemaker.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-09-22 10:58:20.315
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-09-22 10:58:20.781
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x10110b0 --id=0x1276afde --timestamp=1502656663]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-09-22 10:58:22.641
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x10110b0 --id=0x1276afde --timestamp=1502656663 /cygdrive/d/compsys303/assignment2/pacemaker/pacemaker.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-09-22 10:59:06.312
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-09-22 10:59:06.780
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x10110b0 --id=0x1276afde --timestamp=1502656663]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-09-22 10:59:08.660
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x10110b0 --id=0x1276afde --timestamp=1502656663 /cygdrive/d/compsys303/assignment2/pacemaker/pacemaker.elf]

@@ -73,6 +73,8 @@ void output() {
 	if (AP) led_reg |= 0x1;
 	if (VP) led_reg |= 0x2;
 	IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,led_reg);
+
+	printf("LEDs: %02x", led_reg);
 }
 
 int main()
@@ -84,8 +86,6 @@ int main()
 	int buttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 	int newbuttons;
 
-	//debug variables
-	char AP_old=-1, VP_old=-1;
 
 	while (1) {
 		//reset and start URI and LRI timers if necessary
@@ -112,14 +112,5 @@ int main()
 		tick();
 
 		output();
-
-		if (AP_old != AP) {
-			printf("AP=%d\n", AP);
-			AP_old=AP;
-		}
-		if (VP_old != VP) {
-			printf("VP=%d\n", VP);
-			VP_old=VP;
-		}
 	}
 }

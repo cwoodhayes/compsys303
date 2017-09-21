@@ -85,7 +85,7 @@ int main()
 	int newbuttons;
 
 	//debug variables
-	char AP_old=-1, VP_old=-1;
+	char AP_old, VP_old;
 
 	while (1) {
 		//reset and start URI and LRI timers if necessary
@@ -114,12 +114,12 @@ int main()
 		output();
 
 		if (AP_old != AP) {
-			printf("AP=%d\n", AP);
+			printf("AP=%d", AP);
 			AP_old=AP;
 		}
-		if (VP_old != VP) {
-			printf("VP=%d\n", VP);
-			VP_old=VP;
+		if (AP_old != AP) {
+			printf("VP=%d", VP);
+			AP_old=VP;
 		}
 	}
 }

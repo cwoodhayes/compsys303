@@ -85,7 +85,7 @@ int main()
 	int newbuttons;
 
 	//debug variables
-	char AP_old=-1, VP_old=-1;
+	char AP_old, VP_old;
 
 	while (1) {
 		//reset and start URI and LRI timers if necessary
