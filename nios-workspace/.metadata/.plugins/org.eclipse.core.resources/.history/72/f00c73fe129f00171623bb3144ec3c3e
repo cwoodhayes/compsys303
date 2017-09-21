@@ -67,17 +67,11 @@ int main()
 	reset();
 	while (1) {
 		//reset and start URI and LRI timers if necessary
-		//also start pvarp, vrp, and aei, although they should have stopped long before
 		if (FSMVAR(StartRI) ) {
 			RESTART_TIMER(URI);
 			RESTART_TIMER(LRI);
-			RESTART_TIMER(PVARP);
-			RESTART_TIMER(VRP);
-			RESTART_TIMER(AEI);
 		}
-		if (FSMVAR(StartAVI) ) {
-			RESTART_TIMER(AVI);
-		}
+
 		tick();
 	}
 }

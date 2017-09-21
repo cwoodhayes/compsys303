@@ -17,3 +17,13 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.
 
 !ENTRY org.eclipse.cdt.core 1 0 2017-09-20 21:27:31.274
 !MESSAGE Indexed 'cs303_a1' (1 sources, 68 headers) in 0.22 sec: 3,112 declarations; 2,942 references; 6 unresolved inclusions; 2 syntax errors; 36 unresolved names (0.59%)
+!SESSION 2017-09-22 09:00:21.301 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-09-22 09:00:24.279
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.

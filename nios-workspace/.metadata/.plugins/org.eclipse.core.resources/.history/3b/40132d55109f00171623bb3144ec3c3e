@@ -31,14 +31,9 @@ char _pacemaker_local_URI_t;
 
 //Macro for making FSM variables less of a mouthful
 #define FSMVAR(NAME) _pacemaker_local_##NAME
-
-//Macros for declaring and using timer ISR's, since they always do the same thing here
-#define DECLARE_TIMER_ISR(NAME) int/*alt_u32*/ NAME##_timer_isr(void* context) \
-{ 	volatile int* trigger = (volatile int*)context; \
-	*trigger = 1; \
-	return 0; }
-#define TIMER_ISR(NAME) NAME##_timer_isr
-
+//Macro for declaring timer ISR's
+#define DECLARE_TIMER_ISR(NAME) int/*alt_u32*/ NAME##_timer_isr(void* context)
+#define TIMER_ISR(NAME, CONTEXT) NAME##_timer_isr(CONTEXT)
 //Macro for restarting a timer
 #define RESTART_TIMER(NAME) \
 		alt_alarm_stop(& NAME##_timer); \
@@ -53,31 +48,25 @@ static int/*alt_alarm*/ LRI_timer,
 	URI_timer;
 
 //timer ISR declarations
-DECLARE_TIMER_ISR (LRI)
-DECLARE_TIMER_ISR (URI)
-DECLARE_TIMER_ISR (PVARP)
-DECLARE_TIMER_ISR (VRP)
-DECLARE_TIMER_ISR (AEI)
-DECLARE_TIMER_ISR (URI)
 
+DECLARE_TIMER_ISR (LRI) {
 
+}
+
+DECLARE_TIMER_ISR (URI) {
+
+}
 
 int main()
 {
 	reset();
 	while (1) {
 		//reset and start URI and LRI timers if necessary
-		//also start pvarp, vrp, and aei, although they should have stopped long before
 		if (FSMVAR(StartRI) ) {
 			RESTART_TIMER(URI);
 			RESTART_TIMER(LRI);
-			RESTART_TIMER(PVARP);
-			RESTART_TIMER(VRP);
-			RESTART_TIMER(AEI);
 		}
-		if (FSMVAR(StartAVI) ) {
-			RESTART_TIMER(AVI);
-		}
+
 		tick();
 	}
 }
