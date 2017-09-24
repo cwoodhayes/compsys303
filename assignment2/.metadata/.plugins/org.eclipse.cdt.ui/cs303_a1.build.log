@@ -1,0 +1,11 @@
+
+**** Build of configuration Nios II for project cs303_a1 ****
+
+make all 
+Info: Building ../cs303_a1_bsp/
+make --no-print-directory -C ../cs303_a1_bsp/
+makefile:571: Warning: SOPC File D:/compsys303/system.sopcinfo could not be found.
+[BSP build complete]
+[cs303_a1 build complete]
+
+**** Build Finished ****

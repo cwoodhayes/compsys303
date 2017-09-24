@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project pacemaker ****
+
+make all 
+Info: Building D:/compsys303/assignment2/pacemaker_bsp/
+make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
+[BSP build complete]
+[pacemaker build complete]
+
+**** Build Finished ****

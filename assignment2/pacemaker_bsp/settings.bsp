@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>22/09/2017 9:42:41 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1506030161061</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>D:\compsys303\assignment2\pacemaker_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>24/09/2017 8:47:04 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1506239224267</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>D:\Conor-Dallas\compsys303\assignment2\pacemaker_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>D:\compsys303\assignment1\system.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>

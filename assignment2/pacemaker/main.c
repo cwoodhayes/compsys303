@@ -35,7 +35,7 @@ char StartRI;
 #include <system.h>
 
 //Macro for making FSM variables less of a mouthful
-// (sometimes they have extra names attached to them)
+//(sometimes they have extra names attached to them)
 #define FSMVAR(NAME) NAME
 
 //Macros for declaring and using timer ISR's, since they always do the same thing here
@@ -49,7 +49,7 @@ char StartRI;
 #define RESTART_TIMER(NAME) \
 		alt_alarm_stop(& NAME##_timer); \
 		alt_alarm_start(& NAME##_timer, NAME##_VALUE, NAME##_timer_isr, \
-		& FSMVAR(NAME##_t) )
+		& FSMVAR(NAME##_t))
 
 static alt_alarm LRI_timer,
 	PVARP_timer,
@@ -66,13 +66,23 @@ DECLARE_TIMER_ISR (PVARP)
 DECLARE_TIMER_ISR (VRP)
 DECLARE_TIMER_ISR (AEI)
 
+// UART
+FILE* uart_fp;
+
 void output() {
 
 	//LED handling. LEDG0 represents a ventricular event while
 	//LEDG1 simulates an atrial event
 	int led_reg = 0;
-	if (AS) led_reg |= 0x1;
-	if (VS) led_reg |= 0x2;
+
+	if (AP) {
+		led_reg |= 0x1;
+	}
+
+	if (VP) {
+		led_reg |= 0x2;
+	}
+
 	IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,led_reg);
 }
 
@@ -80,32 +90,45 @@ int main()
 {
 	reset();
 
+	printf("Initializing pacemaker...\n");
+
+	//setup UART file pointer
+	uart_fp = fopen(UART_NAME, "r+");
+
 	//initialise the button registers
 	IOWR_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE, 0);
 	int buttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 	int newbuttons;
 
 	while (1) {
-		//reset and start URI and LRI timers if necessary
-		//also start pvarp, vrp, and aei, although they should have stopped long before
-		if (FSMVAR(StartRI) ) {
-			RESTART_TIMER(URI);
-			RESTART_TIMER(LRI);
-			RESTART_TIMER(PVARP);
-			RESTART_TIMER(VRP);
-			RESTART_TIMER(AEI);
+
+			//Reset and start URI and LRI timers if necessary
+			//Also start PVARP, VRP, and AEI, although they should have stopped long before
+			if (FSMVAR(StartRI)) {
+
+				RESTART_TIMER(URI);
+				RESTART_TIMER(LRI);
+				RESTART_TIMER(PVARP);
+				RESTART_TIMER(VRP);
+				RESTART_TIMER(AEI);
+			}
+
+			if (FSMVAR(StartAVI)) {
+				RESTART_TIMER(AVI);
+			}
+
+			//Button handling. An atrial sense is mapped to KEY0 and a ventricular sense is mapped
+			//to KEY1
+			newbuttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+			if (newbuttons != buttons) {
+				buttons = newbuttons;
+
+				AS = (buttons & (1 << 0));
+				VS = (buttons & (1 << 1));
+			}
+
+			tick();
+
+			output();
 		}
-		if (FSMVAR(StartAVI) ) {
-			RESTART_TIMER(AVI);
-		}
-		//button handling
-		newbuttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
-		if (newbuttons != buttons) {
-			buttons = newbuttons;
-			AS = buttons & (1 << 0);
-			VS = buttons & (1 << 1);
-		}
-		tick();
-		output();
-	}
 }
