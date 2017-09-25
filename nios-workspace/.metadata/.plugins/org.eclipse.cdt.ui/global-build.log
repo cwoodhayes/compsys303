@@ -7,109 +7,11 @@ make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
 [BSP build complete]
 Info: Compiling main.c to obj/default/main.o
 nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
-main.c:56: warning: 'AVI_timer' defined but not used
-Info: Compiling pacemaker_fsm.c to obj/default/pacemaker_fsm.o
-nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/pacemaker_fsm.o pacemaker_fsm.c
 Info: Linking pacemaker.elf
 nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
 nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
-Info: (pacemaker.elf) 27 KBytes program size (code + initialized data).
-Info:                 8158 KBytes free for stack + heap.
-Info: Creating pacemaker.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
-[pacemaker build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project cs303_a1 ****
-
-make all 
-Info: Building ../cs303_a1_bsp/
-make --no-print-directory -C ../cs303_a1_bsp/
-makefile:571: Warning: SOPC File D:/compsys303/system.sopcinfo could not be found.
-[BSP build complete]
-[cs303_a1 build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project cs303_a1_bsp ****
-
-make all 
-makefile:571: Warning: SOPC File D:/compsys303/system.sopcinfo could not be found.
-[BSP build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project pacemaker ****
-
-make all 
-Info: Building D:/compsys303/assignment2/pacemaker_bsp/
-make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
-[BSP build complete]
-Info: Compiling main.c to obj/default/main.o
-nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
-Info: Compiling pacemaker_fsm.c to obj/default/pacemaker_fsm.o
-nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/pacemaker_fsm.o pacemaker_fsm.c
-Info: Linking pacemaker.elf
-nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
-nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
-Info: (pacemaker.elf) 27 KBytes program size (code + initialized data).
-Info:                 8158 KBytes free for stack + heap.
-Info: Creating pacemaker.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
-[pacemaker build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project pacemaker_bsp ****
-
-make all 
-[BSP build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project pacemaker ****
-
-make all 
-Info: Building D:/compsys303/assignment2/pacemaker_bsp/
-make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
-[BSP build complete]
-[pacemaker build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project pacemaker ****
-
-make all 
-Info: Building D:/compsys303/assignment2/pacemaker_bsp/
-make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
-[BSP build complete]
-Info: Compiling main.c to obj/default/main.o
-nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
-Info: Linking pacemaker.elf
-nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
-nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
-Info: (pacemaker.elf) 68 KBytes program size (code + initialized data).
-Info:                 8116 KBytes free for stack + heap.
-Info: Creating pacemaker.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
-[pacemaker build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project pacemaker ****
-
-make all 
-Info: Building D:/compsys303/assignment2/pacemaker_bsp/
-make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
-[BSP build complete]
-Info: Compiling main.c to obj/default/main.o
-nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
-Info: Linking pacemaker.elf
-nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
-nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
-Info: (pacemaker.elf) 68 KBytes program size (code + initialized data).
-Info:                 8116 KBytes free for stack + heap.
+Info: (pacemaker.elf) 42 KBytes program size (code + initialized data).
+Info:                 8142 KBytes free for stack + heap.
 Info: Creating pacemaker.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
 [pacemaker build complete]
@@ -137,62 +39,14 @@ nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc
 Info: Linking pacemaker.elf
 nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
 nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
-      0 [main] perl (7012) C:\altera\13.0\quartus\bin\cygwin\bin\perl.exe: *** fatal error - cygheap base mismatch detected - 0x612708D0/0x9C08D0.
-This problem is probably due to using incompatible versions of the cygwin DLL.
-Search for cygwin1.dll using the Windows Start->Find/Search facility
-and delete all but the most recent version.  The most recent version *should*
-reside in x:\cygwin\bin, where 'x' is the drive on which you have
-installed the cygwin distribution.  Rebooting is also suggested if you
-are unable to find another cygwin DLL.
-/cygdrive/c/altera/13.0/nios2eds/bin/sh_pl.sh: line 2:  8692 Segmentation fault      PERL5LIB=`cygpath -u "$SOPC_KIT_NIOS2/bin"` perl "${SH_PL:-$0.pl}" $@
-make: *** [pacemaker.elf] Error 139
-make: *** Deleting file `pacemaker.elf'
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project cs303_a1 ****
-
-make all 
-Info: Building ../cs303_a1_bsp/
-make --no-print-directory -C ../cs303_a1_bsp/
-makefile:571: Warning: SOPC File D:/compsys303/system.sopcinfo could not be found.
-[BSP build complete]
-[cs303_a1 build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project cs303_a1_bsp ****
-
-make all 
-makefile:571: Warning: SOPC File D:/compsys303/system.sopcinfo could not be found.
-[BSP build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project pacemaker ****
-
-make all 
-Info: Building D:/compsys303/assignment2/pacemaker_bsp/
-make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
-[BSP build complete]
-Info: Linking pacemaker.elf
-nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
-nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
-Info: (pacemaker.elf) 68 KBytes program size (code + initialized data).
-Info:                 8116 KBytes free for stack + heap.
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8113 KBytes free for stack + heap.
 Info: Creating pacemaker.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
 [pacemaker build complete]
 
 **** Build Finished ****
 
-**** Build of configuration Nios II for project pacemaker_bsp ****
-
-make all 
-[BSP build complete]
-
-**** Build Finished ****
-
 **** Build of configuration Nios II for project pacemaker ****
 
 make all 
@@ -200,42 +54,6 @@ Info: Building D:/compsys303/assignment2/pacemaker_bsp/
 make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
 [BSP build complete]
 [pacemaker build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project cs303_a1 ****
-
-make all 
-Info: Building ../cs303_a1_bsp/
-make --no-print-directory -C ../cs303_a1_bsp/
-makefile:571: Warning: SOPC File D:/compsys303/system.sopcinfo could not be found.
-[BSP build complete]
-[cs303_a1 build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project cs303_a1_bsp ****
-
-make all 
-makefile:571: Warning: SOPC File D:/compsys303/system.sopcinfo could not be found.
-[BSP build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project pacemaker ****
-
-make all 
-Info: Building D:/compsys303/assignment2/pacemaker_bsp/
-make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
-[BSP build complete]
-[pacemaker build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project pacemaker_bsp ****
-
-make all 
-[BSP build complete]
 
 **** Build Finished ****
 
@@ -250,62 +68,14 @@ nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc
 Info: Linking pacemaker.elf
 nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
 nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
-      0 [main] perl (8208) C:\altera\13.0\quartus\bin\cygwin\bin\perl.exe: *** fatal error - cygheap base mismatch detected - 0x612708D0/0xBA08D0.
-This problem is probably due to using incompatible versions of the cygwin DLL.
-Search for cygwin1.dll using the Windows Start->Find/Search facility
-and delete all but the most recent version.  The most recent version *should*
-reside in x:\cygwin\bin, where 'x' is the drive on which you have
-installed the cygwin distribution.  Rebooting is also suggested if you
-are unable to find another cygwin DLL.
-/cygdrive/c/altera/13.0/nios2eds/bin/sh_pl.sh: line 2:  8608 Segmentation fault      PERL5LIB=`cygpath -u "$SOPC_KIT_NIOS2/bin"` perl "${SH_PL:-$0.pl}" $@
-make: *** [pacemaker.elf] Error 139
-make: *** Deleting file `pacemaker.elf'
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project cs303_a1 ****
-
-make all 
-Info: Building ../cs303_a1_bsp/
-make --no-print-directory -C ../cs303_a1_bsp/
-makefile:571: Warning: SOPC File D:/compsys303/system.sopcinfo could not be found.
-[BSP build complete]
-[cs303_a1 build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project cs303_a1_bsp ****
-
-make all 
-makefile:571: Warning: SOPC File D:/compsys303/system.sopcinfo could not be found.
-[BSP build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project pacemaker ****
-
-make all 
-Info: Building D:/compsys303/assignment2/pacemaker_bsp/
-make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
-[BSP build complete]
-Info: Linking pacemaker.elf
-nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
-nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
-Info: (pacemaker.elf) 68 KBytes program size (code + initialized data).
-Info:                 8116 KBytes free for stack + heap.
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8113 KBytes free for stack + heap.
 Info: Creating pacemaker.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
 [pacemaker build complete]
 
 **** Build Finished ****
 
-**** Build of configuration Nios II for project pacemaker_bsp ****
-
-make all 
-[BSP build complete]
-
-**** Build Finished ****
-
 **** Build of configuration Nios II for project pacemaker ****
 
 make all 
@@ -322,6 +92,15 @@ make all
 Info: Building D:/compsys303/assignment2/pacemaker_bsp/
 make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
 [BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Linking pacemaker.elf
+nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
+nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8113 KBytes free for stack + heap.
+Info: Creating pacemaker.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
 [pacemaker build complete]
 
 **** Build Finished ****
@@ -332,6 +111,15 @@ make all
 Info: Building D:/compsys303/assignment2/pacemaker_bsp/
 make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
 [BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Linking pacemaker.elf
+nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
+nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8113 KBytes free for stack + heap.
+Info: Creating pacemaker.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
 [pacemaker build complete]
 
 **** Build Finished ****
@@ -364,11 +152,235 @@ make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
 [BSP build complete]
 Info: Compiling main.c to obj/default/main.o
 nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling pacemaker_fsm.c to obj/default/pacemaker_fsm.o
+nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/pacemaker_fsm.o pacemaker_fsm.c
 Info: Linking pacemaker.elf
 nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
 nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
-Info: (pacemaker.elf) 68 KBytes program size (code + initialized data).
-Info:                 8116 KBytes free for stack + heap.
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8113 KBytes free for stack + heap.
+Info: Creating pacemaker.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
+[pacemaker build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project pacemaker ****
+
+make all 
+Info: Building D:/compsys303/assignment2/pacemaker_bsp/
+make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Linking pacemaker.elf
+nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
+nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8113 KBytes free for stack + heap.
+Info: Creating pacemaker.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
+[pacemaker build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project pacemaker ****
+
+make all 
+Info: Building D:/compsys303/assignment2/pacemaker_bsp/
+make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+main.c: In function 'URI_timer_isr':
+main.c:63: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:63: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'AVI_timer_isr':
+main.c:64: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:64: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'LRI_timer_isr':
+main.c:65: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:65: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'PVARP_timer_isr':
+main.c:66: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:66: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'VRP_timer_isr':
+main.c:67: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:67: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'AEI_timer_isr':
+main.c:68: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:68: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+Info: Linking pacemaker.elf
+nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
+nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8113 KBytes free for stack + heap.
+Info: Creating pacemaker.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
+[pacemaker build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project pacemaker ****
+
+make all 
+Info: Building D:/compsys303/assignment2/pacemaker_bsp/
+make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
+[BSP build complete]
+[pacemaker build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project pacemaker ****
+
+make all 
+Info: Building D:/compsys303/assignment2/pacemaker_bsp/
+make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+main.c: In function 'URI_timer_isr':
+main.c:64: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:64: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'AVI_timer_isr':
+main.c:65: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:65: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'LRI_timer_isr':
+main.c:66: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:66: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'PVARP_timer_isr':
+main.c:67: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:67: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'VRP_timer_isr':
+main.c:68: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:68: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'AEI_timer_isr':
+main.c:69: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:69: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'main':
+main.c:111: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'char *'
+main.c:111: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'char *'
+main.c:112: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'char *'
+main.c:112: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'char *'
+main.c:113: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'char *'
+main.c:113: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'char *'
+main.c:114: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'char *'
+main.c:114: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'char *'
+main.c:115: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'char *'
+main.c:115: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'char *'
+main.c:120: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'char *'
+main.c:120: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'char *'
+Info: Linking pacemaker.elf
+nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
+nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8113 KBytes free for stack + heap.
+Info: Creating pacemaker.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
+[pacemaker build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project pacemaker ****
+
+make all 
+Info: Building D:/compsys303/assignment2/pacemaker_bsp/
+make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+main.c: In function 'URI_timer_isr':
+main.c:64: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:64: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'AVI_timer_isr':
+main.c:65: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:65: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'LRI_timer_isr':
+main.c:66: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:66: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'PVARP_timer_isr':
+main.c:67: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:67: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'VRP_timer_isr':
+main.c:68: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:68: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'AEI_timer_isr':
+main.c:69: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:69: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'main':
+main.c:111: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'char *'
+main.c:111: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'char *'
+main.c:112: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'char *'
+main.c:112: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'char *'
+main.c:113: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'char *'
+main.c:113: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'char *'
+main.c:114: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'char *'
+main.c:114: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'char *'
+main.c:115: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'char *'
+main.c:115: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'char *'
+main.c:120: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'char *'
+main.c:120: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'char *'
+Info: Linking pacemaker.elf
+nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
+nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8113 KBytes free for stack + heap.
+Info: Creating pacemaker.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
+[pacemaker build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project pacemaker ****
+
+make all 
+Info: Building D:/compsys303/assignment2/pacemaker_bsp/
+make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Linking pacemaker.elf
+nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
+nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8113 KBytes free for stack + heap.
+Info: Creating pacemaker.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
+[pacemaker build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project pacemaker ****
+
+make all 
+Info: Building D:/compsys303/assignment2/pacemaker_bsp/
+make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+main.c: In function 'URI_timer_isr':
+main.c:64: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:64: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'AVI_timer_isr':
+main.c:65: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:65: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'LRI_timer_isr':
+main.c:66: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:66: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'PVARP_timer_isr':
+main.c:67: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:67: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'VRP_timer_isr':
+main.c:68: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:68: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'AEI_timer_isr':
+main.c:69: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:69: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+Info: Linking pacemaker.elf
+nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
+nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8112 KBytes free for stack + heap.
 Info: Creating pacemaker.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
 [pacemaker build complete]
@@ -401,52 +413,33 @@ make all
 Info: Building D:/compsys303/assignment2/pacemaker_bsp/
 make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
 [BSP build complete]
-[pacemaker build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project cs303_a1 ****
-
-make all 
-Info: Building ../cs303_a1_bsp/
-make --no-print-directory -C ../cs303_a1_bsp/
-makefile:571: Warning: SOPC File D:/compsys303/system.sopcinfo could not be found.
-[BSP build complete]
-[cs303_a1 build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project cs303_a1_bsp ****
-
-make all 
-makefile:571: Warning: SOPC File D:/compsys303/system.sopcinfo could not be found.
-[BSP build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project pacemaker ****
-
-make all 
-Info: Building D:/compsys303/assignment2/pacemaker_bsp/
-make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
-[BSP build complete]
-[pacemaker build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project pacemaker_bsp ****
-
-make all 
-[BSP build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project pacemaker ****
-
-make all 
-Info: Building D:/compsys303/assignment2/pacemaker_bsp/
-make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
-[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+main.c: In function 'URI_timer_isr':
+main.c:65: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:65: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'AVI_timer_isr':
+main.c:66: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:66: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'LRI_timer_isr':
+main.c:67: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:67: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'PVARP_timer_isr':
+main.c:68: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:68: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'VRP_timer_isr':
+main.c:69: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:69: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c: In function 'AEI_timer_isr':
+main.c:70: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+main.c:70: warning: format '%08x' expects type 'unsigned int', but argument 5 has type 'volatile int *'
+Info: Linking pacemaker.elf
+nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
+nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8112 KBytes free for stack + heap.
+Info: Creating pacemaker.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
 [pacemaker build complete]
 
 **** Build Finished ****
@@ -457,6 +450,34 @@ make all
 Info: Building D:/compsys303/assignment2/pacemaker_bsp/
 make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
 [BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Linking pacemaker.elf
+nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
+nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8113 KBytes free for stack + heap.
+Info: Creating pacemaker.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
+[pacemaker build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project pacemaker ****
+
+make all 
+Info: Building D:/compsys303/assignment2/pacemaker_bsp/
+make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Linking pacemaker.elf
+nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
+nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8112 KBytes free for stack + heap.
+Info: Creating pacemaker.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
 [pacemaker build complete]
 
 **** Build Finished ****
@@ -470,13 +491,29 @@ make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
 Info: Compiling main.c to obj/default/main.o
 nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
 main.c: In function 'main':
-main.c:88: warning: unused variable 'VP_old'
-main.c:88: warning: unused variable 'AP_old'
+main.c:122: warning: implicit declaration of function 'print'
+Info: Linking pacemaker.elf
+nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
+obj/default/main.o: In function `main':
+D:\compsys303\assignment2\pacemaker/main.c:122: undefined reference to `print'
+collect2: ld returned 1 exit status
+make: *** [pacemaker.elf] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project pacemaker ****
+
+make all 
+Info: Building D:/compsys303/assignment2/pacemaker_bsp/
+make --no-print-directory -C D:/compsys303/assignment2/pacemaker_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc -ID:/compsys303/assignment2/pacemaker_bsp/ -ID:/compsys303/assignment2/pacemaker_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
 Info: Linking pacemaker.elf
 nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
 nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
-Info: (pacemaker.elf) 68 KBytes program size (code + initialized data).
-Info:                 8116 KBytes free for stack + heap.
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8112 KBytes free for stack + heap.
 Info: Creating pacemaker.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
 [pacemaker build complete]

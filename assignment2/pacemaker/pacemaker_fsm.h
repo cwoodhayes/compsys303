@@ -23,10 +23,10 @@
 /*****************************************************************************/
 char AS;
 char AP;
-char LRI_t;
 char StartAVI;
 char VS;
 char VP;
+char LRI_t;
 char PVARP_t;
 char VRP_t;
 char AEI_t;
