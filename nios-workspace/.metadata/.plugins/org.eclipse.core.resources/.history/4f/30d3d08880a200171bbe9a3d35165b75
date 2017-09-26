@@ -77,6 +77,7 @@ int led_reg = 0x0;	//stores the current output vals for the LED's
 //pulses the LED using the isr and timer, for LED_PULSE_LEN ms.
 #define PULSE_LED(NUM) \
 	led_reg |= (1 << NUM); \
+	alt_alarm_stop( & LED_TIMER(NUM)); \
 	alt_alarm_start( & LED_TIMER(NUM), LED_PULSE_LEN, LED_TIMER_ISR(NUM), &led_reg ) \
 
 //timer ISR declarations
@@ -90,8 +91,18 @@ DECLARE_TIMER_ISR (AEI)
 DECLARE_LED_TIMER_ISR(0)
 DECLARE_LED_TIMER_ISR(1)
 
+alt_alarm test;
+alt_u32 test_isr(void *context) {
+	printf("hit");
+	return 0;
+}
+
 // UART
 FILE* uart_fp;
+
+#define TEMP(NUM) \
+		led_reg |= (1 << NUM); \
+		alt_alarm_start(&LED_TIMER(NUM), LED_PULSE_LEN, LED_TIMER_ISR(NUM), &led_reg)
 
 void output() {
 
@@ -102,10 +113,11 @@ void output() {
 //	if (VP) led_reg |= 0x2;
 
 	if (AP) {
-		PULSE_LED(0);
+		printf("AP");
+		TEMP(0);
 	}
 	if (VP) {
-		PULSE_LED(1);
+		TEMP(1);
 	}
 	IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,led_reg);
 }

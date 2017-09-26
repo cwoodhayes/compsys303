@@ -90,6 +90,12 @@ DECLARE_TIMER_ISR (AEI)
 DECLARE_LED_TIMER_ISR(0)
 DECLARE_LED_TIMER_ISR(1)
 
+alt_alarm test;
+alt_u32 test_isr(void *context) {
+	printf("hit");
+	return 0;
+}
+
 // UART
 FILE* uart_fp;
 
@@ -102,7 +108,8 @@ void output() {
 //	if (VP) led_reg |= 0x2;
 
 	if (AP) {
-		PULSE_LED(0);
+		printf("AP");
+		TEMP(0);
 	}
 	if (VP) {
 		PULSE_LED(1);
