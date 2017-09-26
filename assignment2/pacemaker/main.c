@@ -38,13 +38,23 @@ char StartRI;
 //(sometimes they have extra names attached to them)
 #define FSMVAR(NAME) NAME
 
+//for debugging:
+#define PRINT_IF_SET(VAR) if (VAR##_t) printf("%8s", #VAR); else printf("%8s", "-");
+
 //Macros for declaring and using timer ISR's, since they always do the same thing here
 #define DECLARE_TIMER_ISR(NAME) alt_u32 NAME##_timer_isr(void* context) \
 { 	volatile int* trigger = (volatile int*)context; \
 	*trigger = 1; \
 	NAME##_t = 1; \
-	printf("%s_t=%d after %d ms |||", #NAME, FSMVAR(NAME##_t), NAME##_VALUE); \
-	printf("AVI:%d--AEI:%d--PVARP:%d--VRP:%d--LRI:%d--URI:%d\n", AVI_t, AEI_t, PVARP_t, VRP_t, LRI_t, URI_t); \
+	PRINT_IF_SET(PVARP); \
+	PRINT_IF_SET(VRP); \
+	PRINT_IF_SET(AVI); \
+	PRINT_IF_SET(AEI); \
+	PRINT_IF_SET(LRI); \
+	PRINT_IF_SET(URI); \
+	printf("\n"); \
+	/*printf("%s_t=%d after %d ms |||", #NAME, FSMVAR(NAME##_t), NAME##_VALUE); \
+	printf("AVI:%d--AEI:%d--PVARP:%d--VRP:%d--LRI:%d--URI:%d\n", AVI_t, AEI_t, PVARP_t, VRP_t, LRI_t, URI_t); */\
 	return 0; }
 #define TIMER_ISR(NAME) NAME##_timer_isr
 
