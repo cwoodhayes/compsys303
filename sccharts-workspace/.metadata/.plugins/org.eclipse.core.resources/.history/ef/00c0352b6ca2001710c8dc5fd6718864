@@ -1,0 +1,36 @@
+scchart pacemaker_sccharts {
+
+  	//sensors and actuators
+	input signal VS, AS;
+	output signal VP, AP;
+	
+	//timer signals
+	input signal PVARP_t, VRP_t, AEI_t, AVI_t, URI_t, LRI_t;
+	output bool StartRI, StartAVI;
+	
+	initial state qStartRI --> qPVARP_VRP with / StartRI;
+	
+	state qPVARP_VRP
+	--> qVRP with PVARP_t
+	--> qPVARP with VRP_t;
+	
+	state qPVARP
+	--> qAEI with PVARP_t
+	--> qStartRI with VS;
+	
+	state qVRP
+	--> qAEI with VRP_t
+	--> qAVI with AS /StartAVI;
+	
+	state qAEI
+	--> qAVI with AS / StartAVI
+	--> qAVI with AEI_t / AP; StartAVI
+	--> qStartRI with LRI_t/VP;
+	
+	state qAVI {
+		entry / StartAVI = true;
+		exit / StartAVI = false;
+	}
+	--> qStartRI with VS
+	--> qStartRI with (AVI_t && URI_t) || LRI_t / VP;
+}
