@@ -4,6 +4,28 @@
  *
  */
 
+/*
+char AS;
+char AP;
+char LRI_t;
+char StartAVI;
+char VS;
+char VP;
+char PVARP_t;
+char VRP_t;
+char AEI_t;
+char AVI_t;
+char URI_t;
+char StartRI;
+
+#define AVI_VALUE 300
+#define AEI_VALUE 800
+#define PVARP_VALUE 50
+#define VRP_VALUE 150
+#define LRI_VALUE 950
+#define URI_VALUE 900
+ *
+ */
 #include <stdio.h>
 #include "pacemaker_fsm.h"
 #include <sys/alt_alarm.h>
@@ -13,37 +35,36 @@
 #include <system.h>
 
 //Macro for making FSM variables less of a mouthful
-//(sometimes SCCHARTS generates them with odd names)
+//(sometimes they have extra names attached to them)
 #define FSMVAR(NAME) NAME
 
-/******************************DEBUGGING MACROS*******************************/
+//for debugging:
 #define PRINT_IF_SET(VAR) if (VAR##_t) printf("%8s", #VAR); else printf("%8s", "-");
-#define DISPLAY_TIMER_VARS \
+
+//Macros for declaring and using timer ISR's, since they always do the same thing here
+#define DECLARE_TIMER_ISR(NAME) alt_u32 NAME##_timer_isr(void* context) \
+{ 	volatile int* trigger = (volatile int*)context; \
+	*trigger = 1; \
+	NAME##_t = 1; \
 	PRINT_IF_SET(PVARP); \
 	PRINT_IF_SET(VRP); \
 	PRINT_IF_SET(AVI); \
 	PRINT_IF_SET(AEI); \
 	PRINT_IF_SET(LRI); \
 	PRINT_IF_SET(URI); \
-	printf("\n")
-
-/****************************GENERAL TIMER MACROS AND DECLARATIONS***********************************/
-//Declare an isr for timer with name NAME
-#define DECLARE_TIMER_ISR(NAME) alt_u32 NAME##_timer_isr(void* context) \
-{ 	volatile int* trigger = (volatile int*)context; \
-	*trigger = 1; \
-	NAME##_t = 1; \
-	DISPLAY_TIMER_VARS; \
+	printf("\n"); \
+	/*printf("%s_t=%d after %d ms |||", #NAME, FSMVAR(NAME##_t), NAME##_VALUE); \
+	printf("AVI:%d--AEI:%d--PVARP:%d--VRP:%d--LRI:%d--URI:%d\n", AVI_t, AEI_t, PVARP_t, VRP_t, LRI_t, URI_t); */\
 	return 0; }
 #define TIMER_ISR(NAME) NAME##_timer_isr
-//Restart the given associated with variable NAME
+
+//Macro for restarting a timer
 #define RESTART_TIMER(NAME) \
 		NAME##_t = 0; \
 		alt_alarm_stop(& NAME##_timer); \
-		alt_alarm_start(& NAME##_timer, NAME##_VALUE, TIMER_ISR(NAME), \
+		alt_alarm_start(& NAME##_timer, NAME##_VALUE, NAME##_timer_isr, \
 		& FSMVAR(NAME##_t))
 
-//timers for various FSM-required values
 static alt_alarm LRI_timer,
 	PVARP_timer,
 	VRP_timer,
@@ -53,10 +74,9 @@ static alt_alarm LRI_timer,
 	led0_timer,
 	led1_timer;
 
-/***********************************LED TIMER MACROS AND DECLARATIONS***********************************/
 int led_reg = 0x0;	//stores the current output vals for the LED's
-#define LED_PULSE_LEN 50
-//Unsets the LED bit after the timer goes off
+#define LED_PULSE_LEN 100
+//Unset the LED bit after the timer goes off
 #define DECLARE_LED_TIMER_ISR(NUM) alt_u32 led##NUM##_timer_isr(void *context) { \
 			led_reg &= ~(1 << NUM); \
 			return 0; \
@@ -68,10 +88,8 @@ int led_reg = 0x0;	//stores the current output vals for the LED's
 	led_reg |= (1 << NUM); \
 	alt_alarm_start( & LED_TIMER(NUM), LED_PULSE_LEN, LED_TIMER_ISR(NUM), &led_reg )
 
-/************************************************BUTTONS*************************************/
-int buttons;	//stores the most recent value of the buttons register
-
-/************************************************FUNCTION DECLARATIONS*****************************/
+/*BUTTONS*/
+int buttons;
 
 //timer ISR declarations
 DECLARE_TIMER_ISR (URI)
@@ -87,7 +105,7 @@ DECLARE_LED_TIMER_ISR(1)
 // UART
 FILE* uart_fp;
 
-void process_led_output() {
+void output_to_leds() {
 	if (AP) {
 		PULSE_LED(0);
 	}
@@ -125,6 +143,7 @@ int main()
 	buttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 
 	while (1) {
+
 			//Reset and start URI and LRI timers if necessary
 			//Also start PVARP, VRP, and AEI, although they should have stopped long before
 			if (FSMVAR(StartRI)) {
@@ -140,6 +159,6 @@ int main()
 			}
 			process_button_input();
 			tick();
-			process_led_output();
+			output_to_leds();
 		}
 }

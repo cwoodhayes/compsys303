@@ -4,6 +4,28 @@
  *
  */
 
+/*
+char AS;
+char AP;
+char LRI_t;
+char StartAVI;
+char VS;
+char VP;
+char PVARP_t;
+char VRP_t;
+char AEI_t;
+char AVI_t;
+char URI_t;
+char StartRI;
+
+#define AVI_VALUE 300
+#define AEI_VALUE 800
+#define PVARP_VALUE 50
+#define VRP_VALUE 150
+#define LRI_VALUE 950
+#define URI_VALUE 900
+ *
+ */
 #include <stdio.h>
 #include "pacemaker_fsm.h"
 #include <sys/alt_alarm.h>
@@ -13,7 +35,7 @@
 #include <system.h>
 
 //Macro for making FSM variables less of a mouthful
-//(sometimes SCCHARTS generates them with odd names)
+//(sometimes they have extra names attached to them)
 #define FSMVAR(NAME) NAME
 
 /******************************DEBUGGING MACROS*******************************/
@@ -54,9 +76,10 @@ static alt_alarm LRI_timer,
 	led1_timer;
 
 /***********************************LED TIMER MACROS AND DECLARATIONS***********************************/
+
 int led_reg = 0x0;	//stores the current output vals for the LED's
-#define LED_PULSE_LEN 50
-//Unsets the LED bit after the timer goes off
+#define LED_PULSE_LEN 100
+//Unset the LED bit after the timer goes off
 #define DECLARE_LED_TIMER_ISR(NUM) alt_u32 led##NUM##_timer_isr(void *context) { \
 			led_reg &= ~(1 << NUM); \
 			return 0; \
@@ -68,10 +91,8 @@ int led_reg = 0x0;	//stores the current output vals for the LED's
 	led_reg |= (1 << NUM); \
 	alt_alarm_start( & LED_TIMER(NUM), LED_PULSE_LEN, LED_TIMER_ISR(NUM), &led_reg )
 
-/************************************************BUTTONS*************************************/
-int buttons;	//stores the most recent value of the buttons register
-
-/************************************************FUNCTION DECLARATIONS*****************************/
+/*BUTTONS*/
+int buttons;
 
 //timer ISR declarations
 DECLARE_TIMER_ISR (URI)

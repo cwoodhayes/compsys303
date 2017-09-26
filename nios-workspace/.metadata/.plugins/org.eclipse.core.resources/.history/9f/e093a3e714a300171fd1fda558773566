@@ -4,6 +4,28 @@
  *
  */
 
+/*
+char AS;
+char AP;
+char LRI_t;
+char StartAVI;
+char VS;
+char VP;
+char PVARP_t;
+char VRP_t;
+char AEI_t;
+char AVI_t;
+char URI_t;
+char StartRI;
+
+#define AVI_VALUE 300
+#define AEI_VALUE 800
+#define PVARP_VALUE 50
+#define VRP_VALUE 150
+#define LRI_VALUE 950
+#define URI_VALUE 900
+ *
+ */
 #include <stdio.h>
 #include "pacemaker_fsm.h"
 #include <sys/alt_alarm.h>
