@@ -72,12 +72,12 @@ int led_reg = 0x0;	//stores the current output vals for the LED's
 			printf("led timer hit\n\n"); \
 			return 0; \
 		}
+#define LED_TIMER(NUM) led##NUM##_timer
 #define LED_TIMER_ISR(NUM) led##NUM##_timer_isr
 //pulses the LED using the isr and timer, for LED_PULSE_LEN ms.
 #define PULSE_LED(NUM) \
 	led_reg |= (1 << NUM); \
-	alt_alarm_stop( & led##NUM##_timer); \
-	alt_alarm_start( & led##NUM##_timer, LED_PULSE_LEN, LED_TIMER_ISR(NUM), &led_reg ) \
+	alt_alarm_start( & LED_TIMER(NUM), LED_PULSE_LEN, LED_TIMER_ISR(NUM), &led_reg ) \
 
 //timer ISR declarations
 DECLARE_TIMER_ISR (URI)
@@ -101,8 +101,12 @@ void output() {
 //	if (AP) led_reg |= 0x1;
 //	if (VP) led_reg |= 0x2;
 
-	if (AP) PULSE_LED(0);
-	if (VP) PULSE_LED(1);
+	if (AP) {
+		PULSE_LED(0);
+	}
+	if (VP) {
+		PULSE_LED(1);
+	}
 	IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,led_reg);
 }
 
@@ -125,7 +129,7 @@ int main()
 			//Reset and start URI and LRI timers if necessary
 			//Also start PVARP, VRP, and AEI, although they should have stopped long before
 			if (FSMVAR(StartRI)) {
-				//printf("Starting AEI\n");
+				printf("Starting AEI\n");
 				RESTART_TIMER(URI);
 				RESTART_TIMER(LRI);
 				RESTART_TIMER(PVARP);
@@ -142,10 +146,12 @@ int main()
 			//to KEY1
 			newbuttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 			if (newbuttons != buttons) {
+				printf("buttons: %02x -- ", newbuttons);
 				buttons = newbuttons;
 
-				AS = (buttons & (1 << 0));
-				VS = (buttons & (1 << 1));
+				AS = (buttons & (1 << 0)) >> 0;
+				VS = (buttons & (1 << 1)) >> 0;
+				printf("AS:%d, VS:%d\n", AS, VS);
 			}
 
 			tick();

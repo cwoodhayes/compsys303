@@ -43,8 +43,8 @@ char StartRI;
 { 	volatile int* trigger = (volatile int*)context; \
 	*trigger = 1; \
 	NAME##_t = 1; \
-	printf("%s_t=%d after %d ms |||", #NAME, FSMVAR(NAME##_t), NAME##_VALUE); \
-	printf("AVI:%d--AEI:%d--PVARP:%d--VRP:%d--LRI:%d--URI:%d\n", AVI_t, AEI_t, PVARP_t, VRP_t, LRI_t, URI_t); \
+	/*printf("%s_t=%d after %d ms |||", #NAME, FSMVAR(NAME##_t), NAME##_VALUE); \
+	printf("AVI:%d--AEI:%d--PVARP:%d--VRP:%d--LRI:%d--URI:%d\n", AVI_t, AEI_t, PVARP_t, VRP_t, LRI_t, URI_t); */\
 	return 0; }
 #define TIMER_ISR(NAME) NAME##_timer_isr
 
@@ -68,16 +68,16 @@ int led_reg = 0x0;	//stores the current output vals for the LED's
 #define LED_PULSE_LEN 100
 //Unset the LED bit after the timer goes off
 #define DECLARE_LED_TIMER_ISR(NUM) alt_u32 led##NUM##_timer_isr(void *context) { \
-			led_reg &= 0; \
-			printf("led timer hit"); \
+			led_reg &= ~(1 << NUM); \
+			printf("led timer hit\n\n"); \
 			return 0; \
 		}
+#define LED_TIMER(NUM) led##NUM##_timer
 #define LED_TIMER_ISR(NUM) led##NUM##_timer_isr
 //pulses the LED using the isr and timer, for LED_PULSE_LEN ms.
 #define PULSE_LED(NUM) \
 	led_reg |= (1 << NUM); \
-	alt_alarm_stop( & led##NUM##_timer); \
-	alt_alarm_start( & led##NUM##_timer, LED_PULSE_LEN, LED_TIMER_ISR(NUM), &led_reg ) \
+	alt_alarm_start( & LED_TIMER(NUM), LED_PULSE_LEN, LED_TIMER_ISR(NUM), &led_reg ) \
 
 //timer ISR declarations
 DECLARE_TIMER_ISR (URI)
@@ -101,8 +101,12 @@ void output() {
 //	if (AP) led_reg |= 0x1;
 //	if (VP) led_reg |= 0x2;
 
-	if (AP) PULSE_LED(0);
-	if (VP) PULSE_LED(1);
+	if (AP) {
+		PULSE_LED(0);
+	}
+	if (VP) {
+		PULSE_LED(1);
+	}
 	IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,led_reg);
 }
 
@@ -142,6 +146,7 @@ int main()
 			//to KEY1
 			newbuttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 			if (newbuttons != buttons) {
+				printf("buttons: %02x", newbuttons);
 				buttons = newbuttons;
 
 				AS = (buttons & (1 << 0));

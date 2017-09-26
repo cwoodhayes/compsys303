@@ -10,8 +10,8 @@ nios2-elf-gcc -xc -MP -MMD -c -ID:/compsys303/assignment2/pacemaker_bsp//HAL/inc
 Info: Linking pacemaker.elf
 nios2-elf-g++  -T'D:/compsys303/assignment2/pacemaker_bsp//linker.x' -msys-crt0='D:/compsys303/assignment2/pacemaker_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -LD:/compsys303/assignment2/pacemaker_bsp/   -Wl,-Map=pacemaker.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o pacemaker.elf obj/default/main.o obj/default/pacemaker_fsm.o -lm 
 nios2-elf-insert pacemaker.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 309768158 --sidp 0x10110b0 --timestamp 1502656663 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name system --quartus_project_dir "d:/compsys303/assignment1" --sopcinfo D:/compsys303/assignment1/system.sopcinfo
-Info: (pacemaker.elf) 43 KBytes program size (code + initialized data).
-Info:                 8141 KBytes free for stack + heap.
+Info: (pacemaker.elf) 71 KBytes program size (code + initialized data).
+Info:                 8113 KBytes free for stack + heap.
 Info: Creating pacemaker.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source pacemaker.elf >pacemaker.objdump
 [pacemaker build complete]

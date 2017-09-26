@@ -69,7 +69,6 @@ int led_reg = 0x0;	//stores the current output vals for the LED's
 //Unset the LED bit after the timer goes off
 #define DECLARE_LED_TIMER_ISR(NUM) alt_u32 led##NUM##_timer_isr(void *context) { \
 			led_reg &= ~(1 << NUM); \
-			printf("led timer hit\n\n"); \
 			return 0; \
 		}
 #define LED_TIMER(NUM) led##NUM##_timer
@@ -146,10 +145,12 @@ int main()
 			//to KEY1
 			newbuttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 			if (newbuttons != buttons) {
+				printf("buttons: %02x -- ", newbuttons);
 				buttons = newbuttons;
 
-				AS = (buttons & (1 << 0));
-				VS = (buttons & (1 << 1));
+				AS = (~buttons & (1 << 0)) >> 0;
+				VS = (~buttons & (1 << 1)) >> 1;
+				printf("AS:%d, VS:%d\n", AS, VS);
 			}
 
 			tick();
