@@ -43,8 +43,8 @@ char StartRI;
 { 	volatile int* trigger = (volatile int*)context; \
 	*trigger = 1; \
 	NAME##_t = 1; \
-	/*printf("%s_t=%d after %d ms |||", #NAME, FSMVAR(NAME##_t), NAME##_VALUE); \
-	printf("AVI:%d--AEI:%d--PVARP:%d--VRP:%d--LRI:%d--URI:%d\n", AVI_t, AEI_t, PVARP_t, VRP_t, LRI_t, URI_t); */\
+	printf("%s_t=%d after %d ms |||", #NAME, FSMVAR(NAME##_t), NAME##_VALUE); \
+	printf("AVI:%d--AEI:%d--PVARP:%d--VRP:%d--LRI:%d--URI:%d\n", AVI_t, AEI_t, PVARP_t, VRP_t, LRI_t, URI_t); \
 	return 0; }
 #define TIMER_ISR(NAME) NAME##_timer_isr
 
@@ -128,7 +128,6 @@ int main()
 			//Reset and start URI and LRI timers if necessary
 			//Also start PVARP, VRP, and AEI, although they should have stopped long before
 			if (FSMVAR(StartRI)) {
-				printf("Starting AEI\n");
 				RESTART_TIMER(URI);
 				RESTART_TIMER(LRI);
 				RESTART_TIMER(PVARP);
@@ -137,7 +136,6 @@ int main()
 			}
 
 			if (FSMVAR(StartAVI)) {
-				printf("Starting AVI\n");
 				RESTART_TIMER(AVI);
 			}
 
