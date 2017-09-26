@@ -33,7 +33,6 @@ char StartRI;
 #include <altera_avalon_pio_regs.h>
 #include <alt_types.h>
 #include <system.h>
-#include <fcntl.h>
 
 //Macro for making FSM variables less of a mouthful
 //(sometimes they have extra names attached to them)
@@ -86,25 +85,12 @@ DECLARE_TIMER_ISR (LRI)
 DECLARE_TIMER_ISR (PVARP)
 DECLARE_TIMER_ISR (VRP)
 DECLARE_TIMER_ISR (AEI)
+
 DECLARE_LED_TIMER_ISR(0)
 DECLARE_LED_TIMER_ISR(1)
 
 // UART
 FILE* uart_fp;
-
-void UARTMode() {
-
-	while(1) {
-		unsigned int buffer = 1;
-		unsigned int value = 0;
-		//setup UART file pointer
-		uart_fp = open(UART_NAME, "r+");
-
-		value = fread(buffer, sizeof(char) ,1 , uart_fp);
-
-		printf("BUFFER, %d\n", value);
-	}
-}
 
 void output() {
 
@@ -128,6 +114,9 @@ int main()
 	reset();
 
 	printf("Initializing pacemaker...\n");
+
+	//setup UART file pointer
+	uart_fp = fopen(UART_NAME, "r+");
 
 	//initialise the button registers
 	IOWR_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE, 0);
@@ -165,7 +154,7 @@ int main()
 			}
 
 			tick();
-			//UARTMode();
+
 			output();
 		}
 }

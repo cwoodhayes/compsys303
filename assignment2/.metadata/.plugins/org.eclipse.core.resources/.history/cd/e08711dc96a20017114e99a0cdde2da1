@@ -33,7 +33,6 @@ char StartRI;
 #include <altera_avalon_pio_regs.h>
 #include <alt_types.h>
 #include <system.h>
-#include <fcntl.h>
 
 //Macro for making FSM variables less of a mouthful
 //(sometimes they have extra names attached to them)
@@ -94,16 +93,15 @@ FILE* uart_fp;
 
 void UARTMode() {
 
-	while(1) {
-		unsigned int buffer = 1;
-		unsigned int value = 0;
-		//setup UART file pointer
-		uart_fp = open(UART_NAME, "r+");
+	//setup UART file pointer
+	uart_fp = fopen(UART_NAME, "r+");
 
-		value = fread(buffer, sizeof(char) ,1 , uart_fp);
+	fprintf(uart_fp, "\x1B[2J");
 
-		printf("BUFFER, %d\n", value);
-	}
+	char c;
+	c = fgetc(uart_fp);
+	fprintf(uart_fp, "%c", c, (int) c);
+
 }
 
 void output() {
@@ -165,7 +163,7 @@ int main()
 			}
 
 			tick();
-			//UARTMode();
+			UARTMode();
 			output();
 		}
 }

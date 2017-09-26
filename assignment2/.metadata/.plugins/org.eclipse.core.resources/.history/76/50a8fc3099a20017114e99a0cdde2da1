@@ -165,7 +165,7 @@ int main()
 			}
 
 			tick();
-			//UARTMode();
+			UARTMode();
 			output();
 		}
 }

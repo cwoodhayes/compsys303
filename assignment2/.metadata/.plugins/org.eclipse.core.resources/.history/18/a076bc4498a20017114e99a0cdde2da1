@@ -95,14 +95,13 @@ FILE* uart_fp;
 void UARTMode() {
 
 	while(1) {
-		unsigned int buffer = 1;
-		unsigned int value = 0;
+		unsigned int buffer = 0;
 		//setup UART file pointer
 		uart_fp = open(UART_NAME, "r+");
 
-		value = fread(buffer, sizeof(char) ,1 , uart_fp);
+		fread(buffer, sizeof(char) ,1 , uart_fp);
 
-		printf("BUFFER, %d\n", value);
+		printf("BUFFER, %d", buffer);
 	}
 }
 
@@ -165,7 +164,7 @@ int main()
 			}
 
 			tick();
-			//UARTMode();
+			UARTMode();
 			output();
 		}
 }

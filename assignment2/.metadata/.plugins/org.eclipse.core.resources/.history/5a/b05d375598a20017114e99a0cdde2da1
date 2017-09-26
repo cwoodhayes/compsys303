@@ -102,7 +102,7 @@ void UARTMode() {
 
 		value = fread(buffer, sizeof(char) ,1 , uart_fp);
 
-		printf("BUFFER, %d\n", value);
+		printf("BUFFER, %d\n", buffer);
 	}
 }
 
@@ -165,7 +165,7 @@ int main()
 			}
 
 			tick();
-			//UARTMode();
+			UARTMode();
 			output();
 		}
 }

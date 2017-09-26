@@ -33,7 +33,6 @@ char StartRI;
 #include <altera_avalon_pio_regs.h>
 #include <alt_types.h>
 #include <system.h>
-#include <fcntl.h>
 
 //Macro for making FSM variables less of a mouthful
 //(sometimes they have extra names attached to them)
@@ -86,6 +85,7 @@ DECLARE_TIMER_ISR (LRI)
 DECLARE_TIMER_ISR (PVARP)
 DECLARE_TIMER_ISR (VRP)
 DECLARE_TIMER_ISR (AEI)
+
 DECLARE_LED_TIMER_ISR(0)
 DECLARE_LED_TIMER_ISR(1)
 
@@ -94,15 +94,23 @@ FILE* uart_fp;
 
 void UARTMode() {
 
+	char newline_character = '\n'; 	//make sure PuTTy is actually sending \n, not \r.
+	fprintf(uart_fp, "Entering timeout configuration mode.\n\33[2K\r");
+
 	while(1) {
-		unsigned int buffer = 1;
-		unsigned int value = 0;
-		//setup UART file pointer
-		uart_fp = open(UART_NAME, "r+");
 
-		value = fread(buffer, sizeof(char) ,1 , uart_fp);
-
-		printf("BUFFER, %d\n", value);
+		char c;
+		unsigned int num = 0;
+		int timeouts_recieved = 0;
+		while(1) {
+			c = fgetc(uart_fp);
+			fprintf(uart_fp, "%c", c, (int) c);
+			if (c <= '9' && c >= '0') {
+				num *= 10;
+				num += c - '0';
+				//TODO: check for invalid number? (i.e., bigger than 4 digits)
+			}
+		}
 	}
 }
 
@@ -128,6 +136,9 @@ int main()
 	reset();
 
 	printf("Initializing pacemaker...\n");
+
+	//setup UART file pointer
+	uart_fp = fopen(UART_NAME, "r+");
 
 	//initialise the button registers
 	IOWR_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE, 0);
@@ -165,7 +176,7 @@ int main()
 			}
 
 			tick();
-			//UARTMode();
+			UARTMode();
 			output();
 		}
 }
