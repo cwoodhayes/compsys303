@@ -43,6 +43,6 @@ void tick();
 #define PVARP_VALUE 50
 #define VRP_VALUE 150
 #define LRI_VALUE 950
-#define URI_VALUE 900
+#define URI_VALUE 600
 
 #endif /* PACEMAKER_H_ */
