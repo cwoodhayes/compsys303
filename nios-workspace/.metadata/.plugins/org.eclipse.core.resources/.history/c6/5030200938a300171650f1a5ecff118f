@@ -134,8 +134,10 @@ void process_button_input() {
 void process_uart_input() {
 	char c= fgetc(uart_fp);
 	if (c == 'A') {
+		printf("A");
 		AS = 1;
 	} else if (c == 'V') {
+		printf("V");
 		VS = 1;
 	}
 	else {

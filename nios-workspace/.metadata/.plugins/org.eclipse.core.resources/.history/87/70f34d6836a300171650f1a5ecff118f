@@ -187,9 +187,9 @@ int main()
 
 	while (1) {
 		// if Mode switches change, change the mode
-		if (mode != (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x1)) {
+		if (mode != (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x3)) {
 			printf("Switching mode...\n");
-			mode = IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x1;
+			mode = IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x3;
 		}
 
 		//Reset and start URI and LRI timers if necessary
