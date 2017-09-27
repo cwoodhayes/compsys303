@@ -3,7 +3,7 @@
 # Machine generated for CPU 'cpu' in SOPC Builder design 'system'
 # SOPC Builder design path: D:/compsys303/assignment1/system.sopcinfo
 #
-# Generated: Sun Sep 24 15:17:32 NZDT 2017
+# Generated: Wed Sep 27 13:56:17 NZDT 2017
 
 # DO NOT MODIFY THIS FILE
 #

@@ -36,7 +36,7 @@
 { 	volatile int* trigger = (volatile int*)context; \
 	*trigger = 1; \
 	NAME##_t = 1; \
-	/*DISPLAY_TIMER_VARS;*/ \
+	DISPLAY_TIMER_VARS; \
 	return 0; }
 #define TIMER_ISR(NAME) NAME##_timer_isr
 //Restart the given associated with variable NAME
@@ -151,7 +151,7 @@ int main()
 
 	//Set up NON_BLOCKING UART
 	fdterm = open(UART_NAME, O_RDWR, O_NONBLOCK, O_NOCTTY);
-	uart_fp = fdopen(fdterm, "rw+");
+	uart_fp = fdopen(fdterm, "rw+")
 
 	while (1) {
 		// if Mode switches change:
@@ -185,7 +185,6 @@ int main()
 			tick();
 			process_led_output();
 			process_uart_output();
-			break;
 		}
 	}
 }

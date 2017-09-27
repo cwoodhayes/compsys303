@@ -36,7 +36,7 @@
 { 	volatile int* trigger = (volatile int*)context; \
 	*trigger = 1; \
 	NAME##_t = 1; \
-	/*DISPLAY_TIMER_VARS;*/ \
+	DISPLAY_TIMER_VARS; \
 	return 0; }
 #define TIMER_ISR(NAME) NAME##_timer_isr
 //Restart the given associated with variable NAME
@@ -103,15 +103,6 @@ void process_led_output() {
 	IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,led_reg);
 }
 
-void process_uart_output() {
-	if (AP) {
-		fputc(uart_fp, 'A');
-	}
-	if (VP) {
-		fputc(uart_fp, 'V');
-	}
-}
-
 void process_button_input() {
 	//Button handling. An atrial sense is mapped to KEY0 and a ventricular sense is mapped
 	//to KEY1
@@ -127,7 +118,7 @@ void process_button_input() {
 }
 
 void process_uart_input() {
-	char c= fgetc(uart_fp);
+	c= fgetc(uart_fp);
 	printf("%c", c);
 
 	if (c == 'A') {
@@ -151,7 +142,7 @@ int main()
 
 	//Set up NON_BLOCKING UART
 	fdterm = open(UART_NAME, O_RDWR, O_NONBLOCK, O_NOCTTY);
-	uart_fp = fdopen(fdterm, "rw+");
+	uart_fp = fdopen(fdterm, "rw+")
 
 	while (1) {
 		// if Mode switches change:
@@ -181,11 +172,8 @@ int main()
 			process_led_output();
 			break;
 		case 1:
-			process_uart_input();
-			tick();
-			process_led_output();
-			process_uart_output();
-			break;
+
+
 		}
 	}
 }

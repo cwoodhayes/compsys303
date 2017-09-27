@@ -36,7 +36,7 @@
 { 	volatile int* trigger = (volatile int*)context; \
 	*trigger = 1; \
 	NAME##_t = 1; \
-	/*DISPLAY_TIMER_VARS;*/ \
+	DISPLAY_TIMER_VARS; \
 	return 0; }
 #define TIMER_ISR(NAME) NAME##_timer_isr
 //Restart the given associated with variable NAME

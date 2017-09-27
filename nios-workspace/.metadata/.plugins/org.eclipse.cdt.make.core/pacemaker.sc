@@ -4,6 +4,12 @@
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1136736041;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1136736041.;cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base.2127417852;cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin.351531373">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="C:\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++" removed="true"/>
+<includePath path="C:\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++\i686-pc-cygwin" removed="true"/>
+<includePath path="C:\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++\backward" removed="true"/>
+<includePath path="C:\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include" removed="true"/>
+<includePath path="C:\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include-fixed" removed="true"/>
+<includePath path="C:\cygwin\usr\include"/>
 <includePath path="D:/compsys303/assignment2/pacemaker_bsp/HAL/inc"/>
 <includePath path="D:/compsys303/assignment2/pacemaker_bsp/"/>
 <includePath path="D:/compsys303/assignment2/pacemaker_bsp/drivers/inc"/>
@@ -232,6 +238,9 @@
 </instance>
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1136736041;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1136736041.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.base.1418028027;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.842711239">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="C:\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include" removed="true"/>
+<includePath path="C:\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include-fixed" removed="true"/>
+<includePath path="C:\cygwin\usr\include"/>
 <includePath path="D:/compsys303/assignment2/pacemaker_bsp/HAL/inc"/>
 <includePath path="D:/compsys303/assignment2/pacemaker_bsp/"/>
 <includePath path="D:/compsys303/assignment2/pacemaker_bsp/drivers/inc"/>

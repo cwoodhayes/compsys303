@@ -1669,3 +1669,22 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.
 
 !ENTRY com.altera.sbtgui.launch 1 0 2017-09-27 12:42:05.669
 !MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/assignment2/pacemaker/pacemaker.elf]
+!SESSION 2017-09-27 13:42:31.540 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_NZ
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-09-27 13:56:58.581
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-09-27 13:57:00.271
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/assignment2/pacemaker/pacemaker.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-09-27 13:58:02.407
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x10110b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-09-27 13:58:04.037
+!MESSAGE Executing: [C:/altera/13.0/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x10110b0 /cygdrive/d/compsys303/assignment2/pacemaker/pacemaker.elf]
