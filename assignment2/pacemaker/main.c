@@ -33,6 +33,8 @@ char StartRI;
 #include <altera_avalon_pio_regs.h>
 #include <alt_types.h>
 #include <system.h>
+#include <stdlib.h>
+#include <ctype.h>
 #include <fcntl.h>
 
 //Macro for making FSM variables less of a mouthful
@@ -91,29 +93,13 @@ DECLARE_LED_TIMER_ISR(1)
 
 // UART
 FILE* uart_fp;
-
-void UARTMode() {
-
-	while(1) {
-		unsigned int buffer = 1;
-		unsigned int value = 0;
-		//setup UART file pointer
-		uart_fp = open(UART_NAME, "r+");
-
-		value = fread(buffer, sizeof(char) ,1 , uart_fp);
-
-		printf("BUFFER, %d\n", value);
-	}
-}
+int uart_rx_count = 0;
+char uart_rx_buffer[255];
+int fdterm;
 
 void output() {
 
-	//LED handling. LEDG0 represents a ventricular event while
-	//LEDG1 simulates an atrial event
-//	int led_reg = 0;
-//	if (AP) led_reg |= 0x1;
-//	if (VP) led_reg |= 0x2;
-
+	//LED handling. LEDG0 represents a ventricular event while LEDG1 simulates an atrial event
 	if (AP) {
 		PULSE_LED(0);
 	}
@@ -123,7 +109,7 @@ void output() {
 	IOWR_ALTERA_AVALON_PIO_DATA(LEDS_GREEN_BASE,led_reg);
 }
 
-int main()
+int main(void)
 {
 	reset();
 
@@ -134,38 +120,83 @@ int main()
 	int buttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 	int newbuttons;
 
-	while (1) {
+	//get the initial mode from the switches
+	int mode = IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x3;
 
-			//Reset and start URI and LRI timers if necessary
-			//Also start PVARP, VRP, and AEI, although they should have stopped long before
-			if (FSMVAR(StartRI)) {
-				printf("Starting AEI\n");
-				RESTART_TIMER(URI);
-				RESTART_TIMER(LRI);
-				RESTART_TIMER(PVARP);
-				RESTART_TIMER(VRP);
-				RESTART_TIMER(AEI);
-			}
+	while(1) {
 
-			if (FSMVAR(StartAVI)) {
-				printf("Starting AVI\n");
-				RESTART_TIMER(AVI);
-			}
-
-			//Button handling. An atrial sense is mapped to KEY0 and a ventricular sense is mapped
-			//to KEY1
-			newbuttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
-			if (newbuttons != buttons) {
-				printf("buttons: %02x -- ", newbuttons);
-				buttons = newbuttons;
-
-				AS = (~buttons & (1 << 0)) >> 0;
-				VS = (~buttons & (1 << 1)) >> 1;
-				printf("AS:%d, VS:%d\n", AS, VS);
-			}
-
-			tick();
-			//UARTMode();
-			output();
+		// if Mode switches change:
+		if (mode != (IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x3)) {
+			printf("Switching mode...\n");
+			mode = IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0x3;
 		}
+
+		switch (mode) {
+		case 0:
+			printf("MODE %d: \n", mode);
+			//Mode 1
+			while (1) {
+				//Reset and start URI and LRI timers if necessary
+				//Also start PVARP, VRP, and AEI, although they should have stopped long before
+				if (FSMVAR(StartRI)) {
+					//printf("Starting AEI\n");
+					RESTART_TIMER(URI);
+					RESTART_TIMER(LRI);
+					RESTART_TIMER(PVARP);
+					RESTART_TIMER(VRP);
+					RESTART_TIMER(AEI);
+				}
+
+				if (FSMVAR(StartAVI)) {
+					//printf("Starting AVI\n");
+					RESTART_TIMER(AVI);
+				}
+
+				//Button handling. An atrial sense is mapped to KEY0 and a ventricular sense is mapped
+				//to KEY1
+				newbuttons = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+				if (newbuttons != buttons) {
+					printf("buttons: %02x -- ", newbuttons);
+					buttons = newbuttons;
+
+					AS = (~buttons & (1 << 0)) >> 0;
+					VS = (~buttons & (1 << 1)) >> 1;
+					printf("AS:%d, VS:%d\n", AS, VS);
+				}
+				tick();
+				output();
+			}
+			break;
+		case 1:
+			printf("MODE %d: \n", mode);
+			//Mode 2
+
+			//NON_BLOCKING UART
+			fdterm = open(UART_NAME, O_RDWR, O_NONBLOCK, O_NOCTTY);
+
+			//setup UART file pointer
+			uart_fp = fdopen(fdterm, "rw+");
+
+			while (1) {
+
+				//uart_rx_count = read(uart_fp, &uart_rx_buffer, sizeof(uart_rx_buffer));
+				int uart_rx_count =0;
+				char c;
+				c= fgetc(uart_fp);
+				printf("%c", c);
+
+				if (c == 'A') {
+					AS = 1;
+				} else if (c == 'V') {
+					VS = 1;
+				}
+
+				tick();
+				output();
+			}
+			break;
+		}
+	}
+
+	return 1;
 }
