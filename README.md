@@ -6,10 +6,14 @@ the Advanced Embedded Systems course I took while studying abroad at the Univers
 
 The projects were developed, implemented, and tested using the NIOSII softessor, loaded onto an Altera FPGA.
 
-The FSM code (see the tick() function) for the second project was generated using the Kieler SCCharts software,
+The FSM code (see the `tick()` function) for the second project was generated using the Kieler SCCharts software,
 which allows the designer to specify a FSM in the synchronous SCCharts language, guaranteeing safe, predictable
 execution of an embedded system requiring synchronous input processing/output generation.  This is important,
 considering that the project was to design a pacemaker. ;)
 
-Since the projects for the course aren't repeated, and I'm nowhere near Auckland now, I'm making this repo--
-which I maintained to help organize our work--public.
+Since the projects for the course aren't repeated in future semesters,
+and I'm nowhere near Auckland now, I'm making this repo--
+which I maintained to help organize our work--public, to provide example code for
+NIOSII (and SCCharts) to anyone interested.
+
+#### Let me know if the code helps you on any of your projects :)
